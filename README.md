@@ -52,16 +52,7 @@ hologres:
   password: "my_password"
 ```
 
-### 4. 添加 Kafka Topic 配置
-
-在 Hologres 的 `kafka_topic_config` 表中添加 Topic 配置：
-
-```sql
-INSERT INTO kafka_topic_config (topic_name, kafka_brokers, data_format, description)
-VALUES ('my_topic', 'broker1:9092,broker2:9092', 'json', '我的 Kafka Topic');
-```
-
-### 5. 运行工具
+### 4. 运行工具
 
 ```bash
 # 查看帮助

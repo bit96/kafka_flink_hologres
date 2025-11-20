@@ -1,0 +1,5 @@
+2025-11-20 11:04:47,516 - INFO - 查询 Topic 配置: duowei_jst_order
+2025-11-20 11:04:47,771 - INFO - 连接 Kafka: alikafka-pre-cn-7pp2s1qpf009-1-vpc.alikafka.aliyuncs.com:9092,alikafka-pre-cn-7pp2s1qpf009-2-vpc.alikafka.aliyuncs.com:9092,alikafka-pre-cn-7pp2s1qpf009-3-vpc.alikafka.aliyuncs.com:9092
+2025-11-20 11:04:47,771 - INFO - 采样 Topic: duowei_jst_order (10 条)
+2025-11-20 11:04:48,353 - ERROR - 生成失败: [Error 30] GroupAuthorizationFailedError: duowei_jst_order_stg
+2025-11-20 11:30:28,806 - ERROR - 拉取失败: [Error 30] GroupAuthorizationFailedError: duowei_jst_order_stg
