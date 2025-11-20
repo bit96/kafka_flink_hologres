@@ -1,0 +1,6 @@
+hologres:
+  host: "hgprecn-cn-bkh4ijbpm001-cn-hangzhou.hologres.aliyuncs.com"
+  port: 80
+  database: "v5project"
+  user: "BASIC$flink_123"
+  password: "flink_123"
