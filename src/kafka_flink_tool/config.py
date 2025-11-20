@@ -4,6 +4,7 @@ from pydantic import BaseModel
 
 class HologresConfig(BaseModel):
     host: str
+    vpc_host: str
     port: int = 80
     database: str
     user: str

@@ -75,13 +75,12 @@ with (
     ,'mutatetype' = 'insertOrReplace'
     ,'ignoredelete' = 'true'
     ,-- 忽略回撤消息产生的Delete请求
-     'sdkMode' = 'jdbc'
+    ,'sdkMode' = 'jdbc'
     ,'connectionSize' = '3'
     ,'jdbcWriteBatchSize' = '256'
     ,'jdbcWriteBatchByteSize' = '2097152'
-    ,-- 2MB
-  'jdbcWriteFlushInterval' = '10000'
-    ,'connectionPoolName' = 'flink-stg_kafka_duowei_jushuitan_order_rt'
+    'jdbcWriteFlushInterval' = '10000'
+    ,'connectionPoolName' = 'flink-{sink_table}'
 )
 ;
 

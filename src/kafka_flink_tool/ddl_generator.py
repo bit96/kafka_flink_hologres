@@ -9,7 +9,10 @@ class DDLGenerator:
         """
         lines = [f"CREATE TABLE IF NOT EXISTS {table_name} ("]
 
-        field_defs = []
+        field_defs = [
+            '    "etl_time" TIMESTAMPTZ',
+            '    "key_col" TEXT'
+        ]
         for field in schema.fields:
             nullable = "" if field.nullable else "NOT NULL"
             # 字段名添加双引号
@@ -21,7 +24,11 @@ class DDLGenerator:
         ddl = "\n".join(lines)
 
         # 添加注释
-        comments = [f"\nCOMMENT ON TABLE {table_name} IS '从 Kafka 同步的数据表';"]
+        comments = [
+            f"\nCOMMENT ON TABLE {table_name} IS '从 Kafka 同步的数据表';",
+            f'COMMENT ON COLUMN {table_name}."etl_time" IS \'ETL 时间戳\';',
+            f'COMMENT ON COLUMN {table_name}."key_col" IS \'Kafka Key\';'
+        ]
         for field in schema.fields:
             comments.append(
                 f'COMMENT ON COLUMN {table_name}."{field.name}" IS \'{field.name} 字段\';'
