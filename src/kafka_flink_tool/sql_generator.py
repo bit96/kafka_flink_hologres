@@ -51,7 +51,7 @@ class FlinkSQLGenerator:
     'value.fields-include' = 'EXCEPT_KEY',
     'value.format' = 'json',
     'value.fields-prefix' = 'value_',
-    'scan.startup.mode' = 'latest-offset'
+    'scan.startup.mode' = 'earliest-offset'
 );"""
 
     def _generate_sink_ddl(self, sink_table: str, schema: InferredSchema, config: HologresConfig) -> str:

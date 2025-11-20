@@ -1,0 +1,720 @@
+2025-11-20 15:31:22,908 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] - --------------------------------------------------------------------------------
+2025-11-20 15:31:22,928 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -  Starting Kubernetes TaskExecutor runner (Version: 1.20-vvr-11.3.0-jdk11, Scala: 2.12, Rev:bb62837, Date:2025-09-18T09:12:47+02:00)
+2025-11-20 15:31:22,929 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -  OS current user: flink
+2025-11-20 15:31:22,930 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -  JVM: OpenJDK 64-Bit Server VM - Alibaba - 11/11.0.22.22-AJDK+0-Alibaba
+2025-11-20 15:31:22,930 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -  Arch: amd64
+2025-11-20 15:31:22,944 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -  Maximum heap size: 645 MiBytes
+2025-11-20 15:31:22,945 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -  JAVA_HOME: /opt/taobao/install/ajdk11_11.0.22.22/
+2025-11-20 15:31:22,949 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -  NODE_TYPE: EBM
+2025-11-20 15:31:22,964 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -  Hadoop version: 3.3.6
+2025-11-20 15:31:22,965 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -  JVM Options:
+2025-11-20 15:31:22,965 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Xmx697932173
+2025-11-20 15:31:22,966 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Xms697932173
+2025-11-20 15:31:22,966 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:MaxDirectMemorySize=300647712
+2025-11-20 15:31:22,967 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:MaxMetaspaceSize=268435456
+2025-11-20 15:31:22,967 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dlog.file=/flink/log/flink--kubernetes-taskmanager-0-job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1.log
+2025-11-20 15:31:22,970 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dlog4j.configuration=file:/flink/conf/log4j2.xml
+2025-11-20 15:31:22,971 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dlog4j.configurationFile=file:/flink/conf/log4j2.xml
+2025-11-20 15:31:22,971 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dlogback.configurationFile=file:/flink/conf/logback-console.xml
+2025-11-20 15:31:22,971 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dstdout.file=/flink/log/flink--kubernetes-taskmanager-0-job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1.out
+2025-11-20 15:31:22,971 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dstderr.file=/flink/log/flink--kubernetes-taskmanager-0-job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1.err
+2025-11-20 15:31:22,971 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:+IgnoreUnrecognizedVMOptions
+2025-11-20 15:31:22,971 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -verbose:gc
+2025-11-20 15:31:22,971 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:+UseParallelGC
+2025-11-20 15:31:22,972 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:NewRatio=3
+2025-11-20 15:31:22,972 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:ParallelGCThreads=4
+2025-11-20 15:31:22,972 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:CICompilerCount=4
+2025-11-20 15:31:22,972 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:-CompactStrings
+2025-11-20 15:31:22,972 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:-PreserveFramePointer
+2025-11-20 15:31:22,972 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:-UseBiasedLocking
+2025-11-20 15:31:22,973 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:-UseCountedLoopSafepoints
+2025-11-20 15:31:22,973 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:FreqInlineSize=500
+2025-11-20 15:31:22,973 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:InlineSmallCode=3000
+2025-11-20 15:31:22,973 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Xss512k
+2025-11-20 15:31:22,973 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -XX:+UseCompactObjectHeaders
+2025-11-20 15:31:22,973 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-exports=java.base/sun.net.util=ALL-UNNAMED
+2025-11-20 15:31:22,973 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-exports=java.rmi/sun.rmi.registry=ALL-UNNAMED
+2025-11-20 15:31:22,973 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
+2025-11-20 15:31:22,973 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED
+2025-11-20 15:31:22,974 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED
+2025-11-20 15:31:22,974 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
+2025-11-20 15:31:22,974 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
+2025-11-20 15:31:22,974 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-exports=java.security.jgss/sun.security.krb5=ALL-UNNAMED
+2025-11-20 15:31:22,974 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.lang=ALL-UNNAMED
+2025-11-20 15:31:22,975 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.net=ALL-UNNAMED
+2025-11-20 15:31:22,975 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.io=ALL-UNNAMED
+2025-11-20 15:31:22,976 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.nio=ALL-UNNAMED
+2025-11-20 15:31:22,976 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/sun.nio.ch=ALL-UNNAMED
+2025-11-20 15:31:22,976 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+2025-11-20 15:31:22,976 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.text=ALL-UNNAMED
+2025-11-20 15:31:22,977 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.time=ALL-UNNAMED
+2025-11-20 15:31:22,977 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.util=ALL-UNNAMED
+2025-11-20 15:31:22,978 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+2025-11-20 15:31:22,978 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED
+2025-11-20 15:31:22,978 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.util.concurrent.locks=ALL-UNNAMED
+2025-11-20 15:31:22,978 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/jdk.internal.loader=ALL-UNNAMED
+2025-11-20 15:31:22,978 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-opens=java.base/java.security=ALL-UNNAMED
+2025-11-20 15:31:22,978 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --add-exports=java.base/sun.net.www=ALL-UNNAMED
+2025-11-20 15:31:22,979 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Djavax.net.ssl.keyStoreType=JKS
+2025-11-20 15:31:22,979 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Djavax.net.ssl.trustStoreType=JKS
+2025-11-20 15:31:22,979 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dlog.file=/flink/log/flink.log
+2025-11-20 15:31:22,981 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dstdout.file=/flink/log/flink.out
+2025-11-20 15:31:22,982 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Djdk.tls.ephemeralDHKeySize=2048
+2025-11-20 15:31:22,982 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dalicloud.sts.credential.provider=sts.file
+2025-11-20 15:31:22,982 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dsts.provider.file.credential.root.path=/flink/sts-secrets/sts-credential
+2025-11-20 15:31:22,982 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dsts.provider.credential.expire.seconds=900
+2025-11-20 15:31:22,982 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dfile.encoding=UTF-8
+2025-11-20 15:31:22,982 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dkubernetes.max.concurrent.requests=1000
+2025-11-20 15:31:22,982 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Xlog:gc*:file=/opt/flink/log/taskmanager-gc.log:time,level:filecount=2,filesize=50M
+2025-11-20 15:31:22,982 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -  Program Arguments:
+2025-11-20 15:31:22,987 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     --configDir
+2025-11-20 15:31:22,988 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     /flink/conf
+2025-11-20 15:31:22,988 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Djobmanager.rpc.address=21.225.43.175
+2025-11-20 15:31:22,989 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dweb.tmpdir=/tmp/flink-web-0b2d2604-8b1b-4f85-a98a-d7a60e5515eb
+2025-11-20 15:31:22,989 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Djobmanager.memory.jvm-overhead.min=201326592b
+2025-11-20 15:31:22,989 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Djobmanager.memory.jvm-metaspace.size=301989888b
+2025-11-20 15:31:22,989 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dpipeline.classpaths=
+2025-11-20 15:31:22,990 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Djobmanager.memory.off-heap.size=134217728b
+2025-11-20 15:31:22,990 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Drest.address=21.225.43.175
+2025-11-20 15:31:22,990 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D.cluster.deployment.mode=ACTIVE_APPLICATION
+2025-11-20 15:31:22,991 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Djobmanager.memory.jvm-overhead.max=201326592b
+2025-11-20 15:31:22,991 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dtaskmanager.resource-id=job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1
+2025-11-20 15:31:22,991 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dexecution.target=embedded
+2025-11-20 15:31:22,991 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Dpipeline.jars=
+2025-11-20 15:31:22,991 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -Djobmanager.memory.heap.size=436207616b
+2025-11-20 15:31:22,991 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:22,991 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.memory.network.min=166429984b
+2025-11-20 15:31:22,991 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:22,992 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.cpu.cores=1.0
+2025-11-20 15:31:22,992 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:22,992 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.memory.task.off-heap.size=0b
+2025-11-20 15:31:22,992 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:22,992 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.memory.jvm-metaspace.size=268435456b
+2025-11-20 15:31:22,992 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:22,992 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     external-resources=none
+2025-11-20 15:31:22,992 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:22,993 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.memory.jvm-overhead.min=214748368b
+2025-11-20 15:31:22,993 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:22,993 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.memory.framework.off-heap.size=134217728b
+2025-11-20 15:31:22,993 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:22,993 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.memory.network.max=166429984b
+2025-11-20 15:31:22,997 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:22,997 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.memory.framework.heap.size=134217728b
+2025-11-20 15:31:23,005 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:23,006 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.memory.managed.size=665719939b
+2025-11-20 15:31:23,006 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:23,006 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.memory.task.heap.size=563714445b
+2025-11-20 15:31:23,006 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:23,006 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.numberOfTaskSlots=1
+2025-11-20 15:31:23,006 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     -D
+2025-11-20 15:31:23,007 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -     taskmanager.memory.jvm-overhead.max=214748368b
+2025-11-20 15:31:23,011 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] -  Classpath: /flink/lib/celeborn-client-flink-1.20-shaded_2.12-0.4.3-3.1.1-flink-20250519.034507-1.jar:/flink/lib/flink-cep-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-connector-files-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-csv-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-json-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-metrics-datadog-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-metrics-graphite-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-metrics-influxdb-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-metrics-kafka-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-metrics-kmonitor-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-metrics-log-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-metrics-prometheus-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-metrics-slf4j-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-metrics-statsd-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-queryable-state-runtime-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-scala_2.12-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-shaded-hadoop-2-uber-3.3.6-10.2-SNAPSHOT-dist-shaded-SNAPSHOT.jar:/flink/lib/flink-statebackend-gemini-bundled_11-4.4.0.jar:/flink/lib/flink-state-processor-api-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-table-api-java-uber-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-table-planner-loader-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/flink-table-runtime-1.20-vvr-11.3.0-jdk11.jar:/flink/lib/jersey-core-1.19.4.jar:/flink/lib/log4j-1.2-api-2.17.1.jar:/flink/lib/log4j-api-2.17.1.jar:/flink/lib/log4j-core-2.17.1.jar:/flink/lib/log4j-slf4j-impl-2.17.1.jar:/flink/lib/shuffle-plugin-1.1-20221207.090155-3.jar:/flink/lib/ververica-connector-vvp-1.20-vvr-11.3.0-jdk11-jar-with-dependencies.jar:/flink/lib/vvp-flink-logging-hdfs-1.0.23-withkafka-SNAPSHOT.jar:/flink/lib/vvp-flink-logging-kafka-1.0.23-withkafka-SNAPSHOT.jar:/flink/lib/vvp-flink-logging-oss-1.0.23-withkafka-SNAPSHOT.jar:/flink/lib/vvp-flink-logging-sls-1.0.23-withkafka-SNAPSHOT.jar:/flink/lib/flink-dist-1.20-vvr-11.3.0-jdk11.jar::::
+2025-11-20 15:31:23,012 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] - --------------------------------------------------------------------------------
+2025-11-20 15:31:23,020 [main] INFO  org.apache.flink.kubernetes.taskmanager.KubernetesTaskExecutorRunner [] - Registered UNIX signal handlers for [TERM, HUP, INT]
+2025-11-20 15:31:23,044 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Using legacy YAML parser to load flink configuration file from /flink/conf/flink-conf.yaml.
+2025-11-20 15:31:23,122 [main] WARN  org.apache.flink.configuration.GlobalConfiguration           [] - Error while trying to split key and value in configuration file /flink/conf/flink-conf.yaml:89: Line is not a key-value pair (missing space after ':'?)
+2025-11-20 15:31:23,124 [main] WARN  org.apache.flink.configuration.GlobalConfiguration           [] - Error while trying to split key and value in configuration file /flink/conf/flink-conf.yaml:132: Line is not a key-value pair (missing space after ':'?)
+2025-11-20 15:31:23,127 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: table.exec.operator-name.max-length, 10240
+2025-11-20 15:31:23,128 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: table.plan.restore.catalog-objects, NONE
+2025-11-20 15:31:23,128 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.taskmanager.service-account, vvr-task-manager
+2025-11-20 15:31:23,128 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.entry.path, /flink/bin/docker-entrypoint.sh
+2025-11-20 15:31:23,128 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: metrics.reporter.promappmgr.port, 9999
+2025-11-20 15:31:23,129 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: env.java.opts, -Djavax.net.ssl.keyStoreType=JKS -Djavax.net.ssl.trustStoreType=JKS -Dlog.file=/flink/log/flink.log -Dstdout.file=/flink/log/flink.out  -Djdk.tls.ephemeralDHKeySize=2048 -Dalicloud.sts.credential.provider=sts.file -Dsts.provider.file.credential.root.path=/flink/sts-secrets/sts-credential -Dsts.provider.credential.expire.seconds=900 -Dfile.encoding=UTF-8 -Dkubernetes.max.concurrent.requests=1000
+2025-11-20 15:31:23,129 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: __sql-gateway.application-mode.classpath.include-sql-gateway-jar__, true
+2025-11-20 15:31:23,129 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.rpc.address, job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-jobmanager
+2025-11-20 15:31:23,130 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: sql-gateway.endpoint.rest.port, 50460
+2025-11-20 15:31:23,130 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: pipeline.dlf.role-session-name, cn-hangzhou@RS@207997634681590302
+2025-11-20 15:31:23,130 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: state.backend.gemini.vm.print.tick, 90
+2025-11-20 15:31:23,131 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: vvp.service.host, vvp-sql-headless.vvp-deploy
+2025-11-20 15:31:23,131 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: env.java.default-opts.jobmanager, -Xlog:gc*:file=/opt/flink/log/jobmanager-gc.log:time,level:filecount=2,filesize=50M
+2025-11-20 15:31:23,131 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: io.tmp.dirs, /opt/flink/flink-tmp-dir
+2025-11-20 15:31:23,131 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: artifact.fetcher.default.download-mode, NO_OVERWRITE
+2025-11-20 15:31:23,132 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: pipeline.sharable-jar-name-patterns, .*-paimon-ali-.*\.jar$;.*-ververica-connector-.*\.jar$
+2025-11-20 15:31:23,132 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: metrics.reporters, jmx,promappmgr
+2025-11-20 15:31:23,133 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: cluster.thread-dump.stacktrace-max-depth, 32
+2025-11-20 15:31:23,133 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: vvr.bash-java-util.skip.supported, true
+2025-11-20 15:31:23,133 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: sql-gateway.artifact.reuse-classloader, true
+2025-11-20 15:31:23,133 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: table.exec.slot-sharing-group.prefer-heap-memory, 512m
+2025-11-20 15:31:23,133 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.checkpointing.tolerable-failed-checkpoints, 2147483647
+2025-11-20 15:31:23,133 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: sql-gateway.endpoint.rest.address, 127.0.0.1
+2025-11-20 15:31:23,134 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: rest.server.max-content-length, 524288000
+2025-11-20 15:31:23,134 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: artifact.fetcher.default.download-dir, /flink/usrlib/table-a607deb736b3344b5c35941ba4184462
+2025-11-20 15:31:23,135 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: flink.sqlserver.error.message.max-length, 20000
+2025-11-20 15:31:23,135 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: table.plan.compile.catalog-objects, SCHEMA
+2025-11-20 15:31:23,135 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: table.catalog-store.kind, vvp
+2025-11-20 15:31:23,136 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: vvp.service.port, 6565
+2025-11-20 15:31:23,136 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.state-recovery.claim-mode, NO_CLAIM
+2025-11-20 15:31:23,136 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: rest.port, 8081
+2025-11-20 15:31:23,136 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: env.java.default-opts.all, -verbose:gc -XX:+UseParallelGC -XX:NewRatio=3 -XX:ParallelGCThreads=4 -XX:CICompilerCount=4 -XX:-CompactStrings -XX:-PreserveFramePointer -XX:-UseBiasedLocking -XX:-UseCountedLoopSafepoints -XX:FreqInlineSize=500 -XX:InlineSmallCode=3000 -Xss512k -XX:+UseCompactObjectHeaders --add-exports=java.base/sun.net.util=ALL-UNNAMED --add-exports=java.rmi/sun.rmi.registry=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-exports=java.security.jgss/sun.security.krb5=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.text=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.locks=ALL-UNNAMED --add-opens=java.base/jdk.internal.loader=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-exports=java.base/sun.net.www=ALL-UNNAMED
+2025-11-20 15:31:23,136 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.dns-policy, Default
+2025-11-20 15:31:23,136 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: $internal.pipeline.job-id, ed8ee91cbabf45d7b18ef5ddfbc1a0eb
+2025-11-20 15:31:23,136 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.jobmanager.cpu, 1.0
+2025-11-20 15:31:23,136 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.state-recovery.ignore-unclaimed-state, false
+2025-11-20 15:31:23,137 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: state.backend, com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:23,141 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: env.disable-flink-system-classloader, true
+2025-11-20 15:31:23,142 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.pod-template-file.jobmanager, /vvp/data/appmanager/ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb_1763623838406_1d189e8d-9b13-4573-90c7-54eccc806682/pod/jm.yaml
+2025-11-20 15:31:23,142 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.jobmanager.annotations, pyxis.alibabacloud.com/network-type:ansm,pyxis.alibabacloud.com/storage-type:fullymanaged
+2025-11-20 15:31:23,142 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: classloader.check-leaked-classloader, true
+2025-11-20 15:31:23,142 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: metrics.reporter.jmx.port, 10000-10240
+2025-11-20 15:31:23,142 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: vvr.resource-plan-agent.enabled, false
+2025-11-20 15:31:23,142 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.jobmanager.labels, sigma.ali/disable-default-pdb-strategy:true
+2025-11-20 15:31:23,142 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: metrics.reporter.jmx.factory.class, org.apache.flink.metrics.jmx.JMXReporterFactory
+2025-11-20 15:31:23,143 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: akka.watch.heartbeat.interval, 10 s
+2025-11-20 15:31:23,143 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: vvr.bash-java-util.output, BASH_JAVA_UTILS_EXEC_RESULT:-Xmx436207616 -Xms436207616 -XX:MaxDirectMemorySize=134217728 -XX:MaxMetaspaceSize=301989888BASH_JAVA_UTILS_EXEC_RESULT:-D jobmanager.memory.off-heap.size=134217728b -D jobmanager.memory.jvm-overhead.min=201326592b -D jobmanager.memory.jvm-metaspace.size=301989888b -D jobmanager.memory.heap.size=436207616b -D jobmanager.memory.jvm-overhead.max=201326592b
+2025-11-20 15:31:23,143 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.pre-allocation.supported, true
+2025-11-20 15:31:23,143 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.savepoint.ignore-unclaimed-state, false
+2025-11-20 15:31:23,144 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: artifact.finder.identifier, vvp
+2025-11-20 15:31:23,144 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: table.builtin-catalog-name, vvp
+2025-11-20 15:31:23,147 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: $internal.application.program-args, --sql;/flink/usrlib/vvpJobSqlFile.sql;--execPlan;/flink/usrlib/execPlan.json;--isApplication
+2025-11-20 15:31:23,148 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.container.image, vvp-asi-registry-vpc.cn-hangzhou.cr.aliyuncs.com/vvp-prod/flink:vvr-11.3.0-jdk11-flink-1.20
+2025-11-20 15:31:23,148 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.rest-service.exposed.type, Headless_ClusterIP
+2025-11-20 15:31:23,148 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: akka.ask.timeout, 120 s
+2025-11-20 15:31:23,148 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.memory.enable-jvm-direct-memory-limit, true
+2025-11-20 15:31:23,148 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: classloader.parent-first-patterns.additional, org.codehaus.janino;org.apache.commons.lang3
+2025-11-20 15:31:23,148 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: security.delegation.token.provider.hbase.enabled, ******
+2025-11-20 15:31:23,148 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: restart-strategy.fixed-delay.attempts, 2147483647
+2025-11-20 15:31:23,148 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.memory.process.size, 1024m
+2025-11-20 15:31:23,149 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: vvr.job.resource-mode, BASIC
+2025-11-20 15:31:23,149 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.rpc.port, 6122
+2025-11-20 15:31:23,149 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.log4j.config-file-name, log4j2.xml
+2025-11-20 15:31:23,149 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: internal.cluster.execution-mode, NORMAL
+2025-11-20 15:31:23,149 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: high-availability.respect-checkpoint-retention-on-shutdown, true
+2025-11-20 15:31:23,149 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: daplatform.support-status, production
+2025-11-20 15:31:23,149 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.checkpointing.externalized-checkpoint-retention, RETAIN_ON_CANCELLATION
+2025-11-20 15:31:23,149 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: fs.oss.endpoint, https://oss-cn-hangzhou-internal.aliyuncs.com
+2025-11-20 15:31:23,149 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.network.retries, 3
+2025-11-20 15:31:23,150 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.memory.jvm-metaspace.size, 288m
+2025-11-20 15:31:23,150 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: high-availability.kubernetes.leader-election.renew-deadline, 60 s
+2025-11-20 15:31:23,150 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: env.java.default-opts.taskmanager, -Xlog:gc*:file=/opt/flink/log/taskmanager-gc.log:time,level:filecount=2,filesize=50M
+2025-11-20 15:31:23,150 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: artifact.fetcher.identifier, default
+2025-11-20 15:31:23,150 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: __sql-gateway.initialize-component.enabled__, false
+2025-11-20 15:31:23,151 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: high-availability.cluster-id, 979ea46a-a654-4674-b2d9-53aebc29288b
+2025-11-20 15:31:23,153 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.network.memory.max, 4g
+2025-11-20 15:31:23,153 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.save-application-status-to-configmap.enabled, true
+2025-11-20 15:31:23,154 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: python.client.executable, python3.9
+2025-11-20 15:31:23,154 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: high-availability.kubernetes.leader-election.lease-duration, 60 s
+2025-11-20 15:31:23,158 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.cluster-id, job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb
+2025-11-20 15:31:23,158 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: high-availability.storageDir, oss://flink-fullymanaged-cdeb8c54c5334a/flink-jobs/namespaces/duowei-default/deployments/979ea46a-a654-4674-b2d9-53aebc29288b/ha
+2025-11-20 15:31:23,158 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.retrieve-taskmanager-hostname, false
+2025-11-20 15:31:23,158 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: sql-gateway.statement.reuse-sql-gateway-classloader, false
+2025-11-20 15:31:23,158 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: fs.oss.region-id, cn-hangzhou
+2025-11-20 15:31:23,158 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: table.exec.legacy-transformation-uids, true
+2025-11-20 15:31:23,159 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: parallelism.default, 1
+2025-11-20 15:31:23,159 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.namespace, vvp-workload
+2025-11-20 15:31:23,159 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: cluster.fine-grained-resource-management.enabled, true
+2025-11-20 15:31:23,159 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: dlf.token-path, ******
+2025-11-20 15:31:23,159 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.memory.process.size, 2048m
+2025-11-20 15:31:23,159 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.internal.jobmanager.entrypoint.class, sdk.shaded.org.apache.flink.kubernetes.entrypoint.KubernetesApplicationClusterEntrypoint
+2025-11-20 15:31:23,159 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.pod-template-file.taskmanager, /vvp/data/appmanager/ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb_1763623838406_1d189e8d-9b13-4573-90c7-54eccc806682/pod/tm.yaml
+2025-11-20 15:31:23,160 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: state.backend.incremental, true
+2025-11-20 15:31:23,160 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: web.cancel.enable, false
+2025-11-20 15:31:23,160 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.rpc.port, 6123
+2025-11-20 15:31:23,160 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: sql-gateway.statement.encrypt-enabled, true
+2025-11-20 15:31:23,161 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.checkpointing.interval, 180s
+2025-11-20 15:31:23,161 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: table.exec.state.ttl, 36 h
+2025-11-20 15:31:23,162 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.container.image.pull-policy, IfNotPresent
+2025-11-20 15:31:23,162 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: restart-strategy.fixed-delay.delay, 10 s
+2025-11-20 15:31:23,162 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: state.backend.gemini.snapshot.close.file, true
+2025-11-20 15:31:23,162 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.taskmanager.annotations, pyxis.alibabacloud.com/network-type:ansm,pyxis.alibabacloud.com/storage-type:fullymanaged
+2025-11-20 15:31:23,162 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: web.submit.enable, false
+2025-11-20 15:31:23,162 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: rest.address, localhost
+2025-11-20 15:31:23,162 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: table.exec.legacy-cast-behaviour, enabled
+2025-11-20 15:31:23,162 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.jobmanager.service-account, vvp
+2025-11-20 15:31:23,162 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: sql-gateway.engine, vvr
+2025-11-20 15:31:23,163 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: blob.server.port, 6124
+2025-11-20 15:31:23,163 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: vvp.service.context, {"requestId":"ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb","namespace":"duowei-default","engineType":"vvr","versionName":"vvr-11.3-jdk11-flink-1.20","vvpGrpcServiceHost":"vvp-sql-headless.vvp-deploy","vvpGrpcServicePort":6565,"vvpClientGrpcDeadline":null,"extensionConf":null}
+2025-11-20 15:31:23,163 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.network-architecture-type, ansm
+2025-11-20 15:31:23,163 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.execution.failover-strategy, region
+2025-11-20 15:31:23,163 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jmx.server.port, 10000,10011-10500
+2025-11-20 15:31:23,164 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.slot.timeout, 60 s
+2025-11-20 15:31:23,165 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: state.savepoints.dir, oss://flink-fullymanaged-cdeb8c54c5334a/flink-savepoints/namespaces/duowei-default/deployments/979ea46a-a654-4674-b2d9-53aebc29288b
+2025-11-20 15:31:23,165 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.taskmanager.cpu, 1.0
+2025-11-20 15:31:23,166 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: state.backend.gemini.restore.file-download.buffer.size, 512kb
+2025-11-20 15:31:23,166 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.runtime-mode, STREAMING
+2025-11-20 15:31:23,166 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: fs.oss.impl, org.apache.hadoop.fs.aliyun.oss.AliyunOSSFileSystem
+2025-11-20 15:31:23,166 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: state.backend.gemini.restore.page-download.buffer.size, 16kb
+2025-11-20 15:31:23,167 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.numberOfTaskSlots, 1
+2025-11-20 15:31:23,168 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: high-availability.jobmanager.port, 6123
+2025-11-20 15:31:23,168 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: $internal.application.main, org.apache.flink.table.runtime.application.VvrSqlDriver
+2025-11-20 15:31:23,168 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.network.memory.floating-buffers-per-gate, 256
+2025-11-20 15:31:23,168 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.target, kubernetes-application
+2025-11-20 15:31:23,169 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: cluster.io-pool.size, 64
+2025-11-20 15:31:23,169 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.execution.attempts-history-size, 100
+2025-11-20 15:31:23,170 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: metrics.reporter.promappmgr.factory.class, org.apache.flink.metrics.prometheus.PrometheusReporterFactory
+2025-11-20 15:31:23,171 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: akka.framesize, 100m
+2025-11-20 15:31:23,171 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.attached, true
+2025-11-20 15:31:23,171 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.shutdown-on-attached-exit, false
+2025-11-20 15:31:23,172 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: high-availability, org.apache.flink.kubernetes.highavailability.KubernetesHaServicesFactory
+2025-11-20 15:31:23,172 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.environment-type, PUBLIC_CLOUD_APPLICATION
+2025-11-20 15:31:23,172 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: env.java.opts.sql-gateway, -Xlog:gc*:/vvp/data/sql/sqlserver/vvr-11.3-jdk11-flink-1.20/vvr-11.3.0-jdk11-flink-1.20/vvr-11.3.0-jdk11-flink-1.20/log/gc-sqlserver.log:time:filecount=5,filesize=5M -XX:MetaspaceSize=1024m -XX:MaxMetaspaceSize=1024m -XX:MinMetaspaceFreeRatio=0 -XX:MaxMetaspaceFreeRatio=100 -XX:+ExitOnOutOfMemoryError -Dalicloud.sts.credential.provider=sts.file -Dsts.provider.file.credential.root.path=/vvp/sts-credential-fullymanaged-secret -Dsts.provider.credential.expire.seconds=900 -Dlog4j2.formatMsgNoLookups=true -Djava.io.tmpdir=/vvp/data/sql/sqlserver/vvr-11.3-jdk11-flink-1.20/vvr-11.3.0-jdk11-flink-1.20/vvr-11.3.0-jdk11-flink-1.20/tmp
+2025-11-20 15:31:23,172 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: restart-strategy, fixed-delay
+2025-11-20 15:31:23,172 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.checkpointing.min-pause, 180s
+2025-11-20 15:31:23,173 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: table.optimizer.window-join-enabled, false
+2025-11-20 15:31:23,173 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: artifact.fetcher.default.delete-on-exit, false
+2025-11-20 15:31:23,173 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: state.checkpoints.dir, oss://flink-fullymanaged-cdeb8c54c5334a/flink-jobs/namespaces/duowei-default/deployments/979ea46a-a654-4674-b2d9-53aebc29288b/checkpoints/jobs/ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb
+2025-11-20 15:31:23,174 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: metrics.reporter.promappmgr.scope.variables.excludes, task_attempt_id
+2025-11-20 15:31:23,174 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: .cluster.deployment.mode, ACTIVE_APPLICATION
+2025-11-20 15:31:23,181 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: jobmanager.rpc.address, 21.225.43.175
+2025-11-20 15:31:23,182 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.cpu.cores, 1.0
+2025-11-20 15:31:23,182 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.memory.task.off-heap.size, 0b
+2025-11-20 15:31:23,182 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.memory.jvm-metaspace.size, 268435456b
+2025-11-20 15:31:23,182 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: jobmanager.memory.jvm-overhead.min, 201326592b
+2025-11-20 15:31:23,182 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: external-resources, none
+2025-11-20 15:31:23,182 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.memory.jvm-overhead.min, 214748368b
+2025-11-20 15:31:23,182 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.memory.framework.off-heap.size, 134217728b
+2025-11-20 15:31:23,182 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.memory.task.heap.size, 563714445b
+2025-11-20 15:31:23,182 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.numberOfTaskSlots, 1
+2025-11-20 15:31:23,182 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: pipeline.classpaths, 
+2025-11-20 15:31:23,182 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.memory.jvm-overhead.max, 214748368b
+2025-11-20 15:31:23,183 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.resource-id, job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1
+2025-11-20 15:31:23,183 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.memory.network.min, 166429984b
+2025-11-20 15:31:23,183 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: jobmanager.memory.off-heap.size, 134217728b
+2025-11-20 15:31:23,183 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: execution.target, embedded
+2025-11-20 15:31:23,183 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: web.tmpdir, /tmp/flink-web-0b2d2604-8b1b-4f85-a98a-d7a60e5515eb
+2025-11-20 15:31:23,184 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.memory.network.max, 166429984b
+2025-11-20 15:31:23,184 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: pipeline.jars, 
+2025-11-20 15:31:23,184 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.memory.framework.heap.size, 134217728b
+2025-11-20 15:31:23,184 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: taskmanager.memory.managed.size, 665719939b
+2025-11-20 15:31:23,186 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: rest.address, 21.225.43.175
+2025-11-20 15:31:23,186 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: jobmanager.memory.jvm-metaspace.size, 301989888b
+2025-11-20 15:31:23,187 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: jobmanager.memory.heap.size, 436207616b
+2025-11-20 15:31:23,187 [main] INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: jobmanager.memory.jvm-overhead.max, 201326592b
+2025-11-20 15:31:23,522 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: azure-fs-hadoop
+2025-11-20 15:31:23,543 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: external-resource-gpu
+2025-11-20 15:31:23,545 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: metrics-cms
+2025-11-20 15:31:23,546 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: metrics-datadog
+2025-11-20 15:31:23,547 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: metrics-graphite
+2025-11-20 15:31:23,547 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: metrics-influx
+2025-11-20 15:31:23,548 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: metrics-jmx
+2025-11-20 15:31:23,548 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: metrics-log
+2025-11-20 15:31:23,550 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: metrics-prometheus
+2025-11-20 15:31:23,550 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: metrics-slf4j
+2025-11-20 15:31:23,550 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: metrics-sls
+2025-11-20 15:31:23,551 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: metrics-statsd
+2025-11-20 15:31:23,551 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: oss-fs-hadoop
+2025-11-20 15:31:23,559 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: pangu-fs
+2025-11-20 15:31:23,560 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID not found, creating it: s3-fs
+2025-11-20 15:31:24,656 [main] INFO  org.apache.flink.runtime.state.changelog.StateChangelogStorageLoader [] - StateChangelogStorageLoader initialized with shortcut names {memory,filesystem}.
+2025-11-20 15:31:24,657 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: azure-fs-hadoop
+2025-11-20 15:31:24,657 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: external-resource-gpu
+2025-11-20 15:31:24,663 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-cms
+2025-11-20 15:31:24,685 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-datadog
+2025-11-20 15:31:24,685 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-graphite
+2025-11-20 15:31:24,685 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-influx
+2025-11-20 15:31:24,685 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-jmx
+2025-11-20 15:31:24,685 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-log
+2025-11-20 15:31:24,686 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-prometheus
+2025-11-20 15:31:24,686 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-slf4j
+2025-11-20 15:31:24,686 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-sls
+2025-11-20 15:31:24,686 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-statsd
+2025-11-20 15:31:24,686 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: oss-fs-hadoop
+2025-11-20 15:31:24,686 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: pangu-fs
+2025-11-20 15:31:24,686 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: s3-fs
+2025-11-20 15:31:24,688 [main] INFO  org.apache.flink.runtime.state.changelog.StateChangelogStorageLoader [] - StateChangelogStorageLoader initialized with shortcut names {memory,filesystem}.
+2025-11-20 15:31:24,763 [main] WARN  org.apache.flink.runtime.util.HadoopUtils                    [] - Could not find Hadoop configuration via any of the supported methods (Flink configuration, environment variables).
+2025-11-20 15:31:25,161 [main] WARN  org.apache.hadoop.util.NativeCodeLoader                      [] - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-11-20 15:31:25,262 [main] INFO  org.apache.flink.runtime.security.modules.HadoopModule       [] - Hadoop user set to flink (auth:SIMPLE)
+2025-11-20 15:31:25,264 [main] INFO  org.apache.flink.runtime.security.modules.HadoopModule       [] - Kerberos security is disabled.
+2025-11-20 15:31:25,281 [main] INFO  org.apache.flink.runtime.security.modules.JaasModule         [] - Jaas file will be created as /opt/flink/flink-tmp-dir/jaas-12565302376205955335.conf.
+2025-11-20 15:31:25,308 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.ask.timeout' instead of proper key 'pekko.ask.timeout'
+2025-11-20 15:31:25,524 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'high-availability' instead of proper key 'high-availability.type'
+2025-11-20 15:31:25,525 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'high-availability' instead of proper key 'high-availability.type'
+2025-11-20 15:31:25,530 [main] INFO  org.apache.flink.kubernetes.highavailability.KubernetesHaServicesFactory [] - Creating Kubernetes high availability services.
+2025-11-20 15:31:26,025 [main] INFO  org.apache.flink.kubernetes.highavailability.KubernetesHaServicesFactory [] - FlinkKubeClient is created.
+2025-11-20 15:31:26,026 [main] INFO  org.apache.flink.kubernetes.highavailability.KubernetesHaServicesFactory [] - Creating blob store.
+2025-11-20 15:31:26,029 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'high-availability' instead of proper key 'high-availability.type'
+2025-11-20 15:31:26,241 [main] INFO  org.apache.flink.fs.osshadoop.OSSFileSystemFactory           [] - fs.oss.accessKeyId is not set, using sts credential fetcher.
+2025-11-20 15:31:26,266 [main] INFO  org.apache.flink.fs.osshadoop.OSSFileSystemFactory           [] - Using custom credentials provider for fully managed storage.
+2025-11-20 15:31:26,480 [main] WARN  org.apache.hadoop.util.NativeCodeLoader                      [] - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-11-20 15:31:27,138 [main] INFO  org.apache.flink.fs.osshadoop.alioss.AliyunOSSFileSystemStore [] - Region is set: cn-hangzhou, using V4 signature
+2025-11-20 15:31:27,148 [main] INFO  org.apache.flink.kubernetes.highavailability.KubernetesHaServicesFactory [] - Blob store is created.
+2025-11-20 15:31:27,153 [main] INFO  org.apache.flink.kubernetes.highavailability.KubernetesLeaderElectionHaServices [] - Creating config map shared watcher.
+2025-11-20 15:31:27,153 [main] INFO  org.apache.flink.kubernetes.kubeclient.Fabric8FlinkKubeClient [] - Creating configmap shared watcher for job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-cluster-config-map.
+2025-11-20 15:31:27,579 [main] INFO  org.apache.flink.kubernetes.highavailability.KubernetesLeaderElectionHaServices [] - Config map shared watcher is created.
+2025-11-20 15:31:27,770 [main] INFO  org.apache.flink.kubernetes.highavailability.KubernetesHaServicesFactory [] - Kubernetes high availability services are created.
+2025-11-20 15:31:27,905 [main] INFO  org.apache.flink.management.jmx.JMXService                   [] - Started JMX server on port 10000.
+2025-11-20 15:31:27,923 [main] INFO  org.apache.flink.runtime.leaderretrieval.DefaultLeaderRetrievalService [] - Starting DefaultLeaderRetrievalService with KubernetesLeaderRetrievalDriver{configMapName='job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-cluster-config-map'}.
+2025-11-20 15:31:27,924 [main] INFO  org.apache.flink.runtime.util.LeaderRetrievalUtils           [] - Trying to select the network interface and address to use by connecting to the leading JobManager.
+2025-11-20 15:31:27,924 [KubernetesClient-Informer-thread-1] INFO  org.apache.flink.kubernetes.kubeclient.resources.KubernetesConfigMapSharedInformer [] - Starting to watch for vvp-workload/job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-cluster-config-map, watching id:8692a04f-b327-43cb-a8a2-b08da87e9047
+2025-11-20 15:31:27,925 [main] INFO  org.apache.flink.runtime.util.LeaderRetrievalUtils           [] - TaskManager will try to connect for PT10S before falling back to heuristics
+2025-11-20 15:31:28,286 [main] INFO  org.apache.flink.runtime.leaderretrieval.DefaultLeaderRetrievalService [] - Stopping DefaultLeaderRetrievalService.
+2025-11-20 15:31:28,287 [main] INFO  org.apache.flink.kubernetes.highavailability.KubernetesLeaderRetrievalDriver [] - Stopping KubernetesLeaderRetrievalDriver{configMapName='job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-cluster-config-map'}.
+2025-11-20 15:31:28,287 [main] INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - TaskManager will use hostname/address 'job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1' (21.225.47.246) for communication.
+2025-11-20 15:31:28,287 [KubernetesClient-Informer-thread-1] INFO  org.apache.flink.kubernetes.kubeclient.resources.KubernetesConfigMapSharedInformer [] - Stopped to watch for vvp-workload/job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-cluster-config-map, watching id:8692a04f-b327-43cb-a8a2-b08da87e9047
+2025-11-20 15:31:28,334 [main] INFO  org.apache.flink.runtime.rpc.pekko.PekkoRpcServiceUtils      [] - Trying to start actor system, external address 21.225.47.246:6122, bind address 0.0.0.0:6122.
+2025-11-20 15:31:28,339 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.ask.timeout' instead of proper key 'pekko.ask.timeout'
+2025-11-20 15:31:28,341 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.framesize' instead of proper key 'pekko.framesize'
+2025-11-20 15:31:29,097 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.pekko.event.slf4j.Slf4jLogger                     [] - Slf4jLogger started
+2025-11-20 15:31:29,131 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.pekko.remote.RemoteActorRefProvider               [] - Pekko Cluster not in use - enabling unsafe features anyway because `pekko.remote.use-unsafe-remote-features-outside-cluster` has been enabled.
+2025-11-20 15:31:29,133 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.pekko.remote.Remoting                             [] - Starting remoting
+2025-11-20 15:31:29,578 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.pekko.remote.Remoting                             [] - Remoting started; listening on addresses :[pekko.tcp://flink@21.225.47.246:6122]
+2025-11-20 15:31:29,712 [main] INFO  org.apache.flink.runtime.rpc.pekko.PekkoRpcServiceUtils      [] - Actor system started at pekko.tcp://flink@21.225.47.246:6122
+2025-11-20 15:31:29,712 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.ask.timeout' instead of proper key 'pekko.ask.timeout'
+2025-11-20 15:31:29,713 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.framesize' instead of proper key 'pekko.framesize'
+2025-11-20 15:31:29,733 [main] INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - Using working directory: WorkingDirectory(/opt/flink/flink-tmp-dir/tm_job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1)
+2025-11-20 15:31:29,737 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.framesize' instead of proper key 'pekko.framesize'
+2025-11-20 15:31:29,761 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: azure-fs-hadoop
+2025-11-20 15:31:29,762 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: external-resource-gpu
+2025-11-20 15:31:29,762 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-cms
+2025-11-20 15:31:29,762 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-datadog
+2025-11-20 15:31:29,762 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-graphite
+2025-11-20 15:31:29,762 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-influx
+2025-11-20 15:31:29,762 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-jmx
+2025-11-20 15:31:29,762 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-log
+2025-11-20 15:31:29,762 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-prometheus
+2025-11-20 15:31:29,763 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-slf4j
+2025-11-20 15:31:29,763 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-sls
+2025-11-20 15:31:29,763 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-statsd
+2025-11-20 15:31:29,763 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: oss-fs-hadoop
+2025-11-20 15:31:29,763 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: pangu-fs
+2025-11-20 15:31:29,763 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: s3-fs
+2025-11-20 15:31:29,825 [main] WARN  org.apache.flink.runtime.metrics.ReporterSetup               [] - Multiple implementations of the same MetricReporter were found in 'lib' and/or 'plugins' directories for org.apache.flink.metrics.datadog.DatadogHttpReporterFactory. It is recommended to remove redundant reporter JARs to resolve used versions' ambiguity.
+2025-11-20 15:31:29,828 [main] WARN  org.apache.flink.runtime.metrics.ReporterSetup               [] - Multiple implementations of the same MetricReporter were found in 'lib' and/or 'plugins' directories for org.apache.flink.metrics.graphite.GraphiteReporterFactory. It is recommended to remove redundant reporter JARs to resolve used versions' ambiguity.
+2025-11-20 15:31:29,830 [main] WARN  org.apache.flink.runtime.metrics.ReporterSetup               [] - Multiple implementations of the same MetricReporter were found in 'lib' and/or 'plugins' directories for org.apache.flink.metrics.influxdb.InfluxdbReporterFactory. It is recommended to remove redundant reporter JARs to resolve used versions' ambiguity.
+2025-11-20 15:31:29,832 [main] WARN  org.apache.flink.runtime.metrics.ReporterSetup               [] - Multiple implementations of the same MetricReporter were found in 'lib' and/or 'plugins' directories for org.apache.flink.metrics.log.LogReporterFactory. It is recommended to remove redundant reporter JARs to resolve used versions' ambiguity.
+2025-11-20 15:31:29,833 [main] WARN  org.apache.flink.runtime.metrics.ReporterSetup               [] - Multiple implementations of the same MetricReporter were found in 'lib' and/or 'plugins' directories for org.apache.flink.metrics.prometheus.PrometheusReporterFactory. It is recommended to remove redundant reporter JARs to resolve used versions' ambiguity.
+2025-11-20 15:31:29,833 [main] WARN  org.apache.flink.runtime.metrics.ReporterSetup               [] - Multiple implementations of the same MetricReporter were found in 'lib' and/or 'plugins' directories for org.apache.flink.metrics.prometheus.PrometheusPushGatewayReporterFactory. It is recommended to remove redundant reporter JARs to resolve used versions' ambiguity.
+2025-11-20 15:31:29,833 [main] WARN  org.apache.flink.runtime.metrics.ReporterSetup               [] - Multiple implementations of the same MetricReporter were found in 'lib' and/or 'plugins' directories for org.apache.flink.metrics.prometheus.PrometheusPushGatewayLoadBalancedReporterFactory. It is recommended to remove redundant reporter JARs to resolve used versions' ambiguity.
+2025-11-20 15:31:29,834 [main] WARN  org.apache.flink.runtime.metrics.ReporterSetup               [] - Multiple implementations of the same MetricReporter were found in 'lib' and/or 'plugins' directories for org.apache.flink.metrics.slf4j.Slf4jReporterFactory. It is recommended to remove redundant reporter JARs to resolve used versions' ambiguity.
+2025-11-20 15:31:29,834 [main] WARN  org.apache.flink.runtime.metrics.ReporterSetup               [] - Multiple implementations of the same MetricReporter were found in 'lib' and/or 'plugins' directories for org.apache.flink.metrics.statsd.StatsDReporterFactory. It is recommended to remove redundant reporter JARs to resolve used versions' ambiguity.
+2025-11-20 15:31:29,914 [main] WARN  org.apache.flink.metrics.jmx.JMXReporter                     [] - JMXReporter port config is deprecated. Please use: Key: 'jmx.server.port' , default: null (fallback keys: []) instead!
+2025-11-20 15:31:29,922 [main] WARN  org.apache.flink.management.jmx.JMXService                   [] - JVM-wide JMXServer already started at port: 10000
+2025-11-20 15:31:30,002 [main] INFO  org.apache.flink.metrics.prometheus.PrometheusReporter       [] - Started PrometheusReporter HTTP server on port 9999.
+2025-11-20 15:31:30,008 [main] INFO  org.apache.flink.runtime.metrics.MetricRegistryImpl          [] - Reporting metrics for reporter jmx of type org.apache.flink.metrics.jmx.JMXReporter.
+2025-11-20 15:31:30,009 [main] INFO  org.apache.flink.runtime.metrics.MetricRegistryImpl          [] - Reporting metrics for reporter promappmgr of type org.apache.flink.metrics.prometheus.PrometheusReporter.
+2025-11-20 15:31:30,009 [main] INFO  org.apache.flink.runtime.metrics.MetricRegistryImpl          [] - No trace reporter configured, no metrics will be exposed/reported.
+2025-11-20 15:31:30,021 [main] INFO  org.apache.flink.runtime.rpc.pekko.PekkoRpcServiceUtils      [] - Trying to start actor system, external address 21.225.47.246:0, bind address 0.0.0.0:0.
+2025-11-20 15:31:30,023 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.ask.timeout' instead of proper key 'pekko.ask.timeout'
+2025-11-20 15:31:30,023 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.framesize' instead of proper key 'pekko.framesize'
+2025-11-20 15:31:30,046 [flink-metrics-6] INFO  org.apache.pekko.event.slf4j.Slf4jLogger                     [] - Slf4jLogger started
+2025-11-20 15:31:30,050 [flink-metrics-6] INFO  org.apache.pekko.remote.RemoteActorRefProvider               [] - Pekko Cluster not in use - enabling unsafe features anyway because `pekko.remote.use-unsafe-remote-features-outside-cluster` has been enabled.
+2025-11-20 15:31:30,051 [flink-metrics-6] INFO  org.apache.pekko.remote.Remoting                             [] - Starting remoting
+2025-11-20 15:31:30,098 [flink-metrics-6] INFO  org.apache.pekko.remote.Remoting                             [] - Remoting started; listening on addresses :[pekko.tcp://flink-metrics@21.225.47.246:36237]
+2025-11-20 15:31:30,113 [main] INFO  org.apache.flink.runtime.rpc.pekko.PekkoRpcServiceUtils      [] - Actor system started at pekko.tcp://flink-metrics@21.225.47.246:36237
+2025-11-20 15:31:30,113 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.ask.timeout' instead of proper key 'pekko.ask.timeout'
+2025-11-20 15:31:30,114 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.framesize' instead of proper key 'pekko.framesize'
+2025-11-20 15:31:30,134 [main] INFO  org.apache.flink.runtime.rpc.pekko.PekkoRpcService           [] - Starting RPC endpoint for org.apache.flink.runtime.metrics.dump.MetricQueryService at pekko://flink-metrics/user/rpc/MetricQueryService_job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1 .
+2025-11-20 15:31:30,148 [main] INFO  org.apache.flink.runtime.blob.PermanentBlobCache             [] - Created BLOB cache storage directory /opt/flink/flink-tmp-dir/tm_job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1/blobStorage
+2025-11-20 15:31:30,154 [main] INFO  org.apache.flink.runtime.blob.TransientBlobCache             [] - Created BLOB cache storage directory /opt/flink/flink-tmp-dir/tm_job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1/blobStorage
+2025-11-20 15:31:30,157 [main] INFO  org.apache.flink.runtime.externalresource.ExternalResourceUtils [] - Enabled external resources: []
+2025-11-20 15:31:30,158 [main] INFO  org.apache.flink.runtime.security.token.DelegationTokenReceiverRepository [] - Loading delegation token receivers
+2025-11-20 15:31:30,167 [main] INFO  org.apache.flink.runtime.security.token.DelegationTokenReceiverRepository [] - Delegation token receiver hadoopfs loaded and initialized
+2025-11-20 15:31:30,168 [main] INFO  org.apache.flink.runtime.security.token.DelegationTokenReceiverRepository [] - Delegation token receiver hbase is disabled so not loaded
+2025-11-20 15:31:30,168 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: azure-fs-hadoop
+2025-11-20 15:31:30,168 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: external-resource-gpu
+2025-11-20 15:31:30,168 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-cms
+2025-11-20 15:31:30,168 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-datadog
+2025-11-20 15:31:30,169 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-graphite
+2025-11-20 15:31:30,169 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-influx
+2025-11-20 15:31:30,169 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-jmx
+2025-11-20 15:31:30,169 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-log
+2025-11-20 15:31:30,169 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-prometheus
+2025-11-20 15:31:30,169 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-slf4j
+2025-11-20 15:31:30,169 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-sls
+2025-11-20 15:31:30,169 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: metrics-statsd
+2025-11-20 15:31:30,169 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: oss-fs-hadoop
+2025-11-20 15:31:30,169 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: pangu-fs
+2025-11-20 15:31:30,169 [main] INFO  org.apache.flink.core.plugin.DefaultPluginManager            [] - Plugin loader with ID found, reusing it: s3-fs
+2025-11-20 15:31:30,172 [main] INFO  org.apache.flink.runtime.security.token.DelegationTokenReceiverRepository [] - Delegation token receiver s3-hadoop loaded and initialized
+2025-11-20 15:31:30,173 [main] INFO  org.apache.flink.runtime.security.token.DelegationTokenReceiverRepository [] - Delegation token receiver s3-presto loaded and initialized
+2025-11-20 15:31:30,173 [main] INFO  org.apache.flink.runtime.security.token.DelegationTokenReceiverRepository [] - Delegation token receivers loaded successfully
+2025-11-20 15:31:30,174 [main] INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - Starting TaskManager with ResourceID: job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1
+2025-11-20 15:31:30,185 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.ask.timeout' instead of proper key 'pekko.ask.timeout'
+2025-11-20 15:31:30,442 [main] INFO  org.apache.flink.runtime.taskexecutor.TaskManagerServices    [] - Temporary file directory '/opt/flink/flink-tmp-dir': total 19 GB, usable 18 GB (94.74% usable)
+2025-11-20 15:31:30,459 [main] INFO  org.apache.flink.runtime.io.disk.iomanager.IOManager         [] - Created a new FileChannelManager for spilling of task related data to disk (joins, sorting, ...). Used directories:
+	/opt/flink/flink-tmp-dir/flink-io-10a26a28-426d-4490-ada0-6d9676c44c0c
+2025-11-20 15:31:30,495 [main] INFO  org.apache.flink.runtime.io.network.netty.NettyConfig        [] - NettyConfig [server address: /0.0.0.0, server port range: 0, ssl enabled: false, memory segment size (bytes): 32768, transport type: AUTO, number of server threads: 1 (manual), number of client threads: 1 (manual), server connect backlog: 0 (use Netty's default), client connect timeout (sec): 120, send/receive buffer size (bytes): 0 (use Netty's default)]
+2025-11-20 15:31:30,515 [main] INFO  org.apache.flink.runtime.io.network.NettyShuffleServiceFactory [] - Created a new FileChannelManager for storing result partitions of BLOCKING shuffles. Used directories:
+	/opt/flink/flink-tmp-dir/flink-netty-shuffle-51162f89-939f-42d6-895b-0160d6f0ced2
+2025-11-20 15:31:30,631 [main] INFO  org.apache.flink.runtime.io.network.buffer.NetworkBufferPool [] - Allocated 158 MB for network buffer pool (number of memory segments: 5079, bytes per segment: 32768).
+2025-11-20 15:31:30,652 [main] INFO  org.apache.flink.runtime.io.network.NettyShuffleEnvironment  [] - Starting the network environment and its components.
+2025-11-20 15:31:30,683 [main] INFO  org.apache.flink.runtime.io.network.netty.NettyClient        [] - Transport type 'auto': using EPOLL.
+2025-11-20 15:31:30,684 [main] INFO  org.apache.flink.runtime.io.network.netty.NettyClient        [] - Successful initialization (took 31 ms).
+2025-11-20 15:31:30,689 [main] INFO  org.apache.flink.runtime.io.network.netty.NettyServer        [] - Transport type 'auto': using EPOLL.
+2025-11-20 15:31:30,701 [main] INFO  org.apache.flink.runtime.io.network.netty.NettyServer        [] - Successful initialization (took 15 ms). Listening on SocketAddress /0:0:0:0:0:0:0:0%0:39383.
+2025-11-20 15:31:30,701 [main] INFO  org.apache.flink.runtime.taskexecutor.TaskManagerServices    [] - TaskManager data connection initialized successfully; listening internally on port: 39383
+2025-11-20 15:31:30,704 [main] INFO  org.apache.flink.runtime.taskexecutor.KvStateService         [] - Starting the kvState service and its components.
+2025-11-20 15:31:30,776 [main] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'akka.ask.timeout' instead of proper key 'pekko.ask.timeout'
+2025-11-20 15:31:30,779 [main] INFO  org.apache.flink.natives.NativeInspector                     [] - Native engine is disabled due to no NativeInspector available
+2025-11-20 15:31:30,800 [main] INFO  org.apache.flink.runtime.rpc.pekko.PekkoRpcService           [] - Starting RPC endpoint for org.apache.flink.runtime.taskexecutor.TaskExecutor at pekko://flink/user/rpc/taskmanager_0 .
+2025-11-20 15:31:30,827 [KubernetesClient-Informer-thread-1] INFO  org.apache.flink.kubernetes.kubeclient.resources.KubernetesConfigMapSharedInformer [] - Starting to watch for vvp-workload/job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-cluster-config-map, watching id:e0cd6e74-3ebf-4a7b-985c-de0b6970de92
+2025-11-20 15:31:30,827 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.flink.runtime.leaderretrieval.DefaultLeaderRetrievalService [] - Starting DefaultLeaderRetrievalService with KubernetesLeaderRetrievalDriver{configMapName='job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-cluster-config-map'}.
+2025-11-20 15:31:30,830 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.flink.runtime.taskexecutor.DefaultJobLeaderService [] - Start job leader service.
+2025-11-20 15:31:30,832 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.flink.runtime.filecache.FileCache                 [] - User file cache uses directory /opt/flink/flink-tmp-dir/flink-dist-cache-2798b703-86d8-47e3-814e-120eb8c6bbf3
+2025-11-20 15:31:30,837 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Connecting to ResourceManager pekko.tcp://flink@21.225.43.175:6123/user/rpc/resourcemanager_0(aee934bef10a71ac038ae4c1425d44c6).
+2025-11-20 15:31:31,232 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Resolved ResourceManager address, beginning registration
+2025-11-20 15:31:31,341 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Successful registration at resource manager pekko.tcp://flink@21.225.43.175:6123/user/rpc/resourcemanager_0 under registration id d46f10b28b44a94c7b391dc7aadd58dd.
+2025-11-20 15:31:31,342 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - [TRACE_STATISTICS] [TM_SEND_REGISTRATION_TO_RM]
+2025-11-20 15:31:31,401 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Receive slot request 4d6c5ce9ea69a10d714ff66bd5e8f60a for job ed8ee91cbabf45d7b18ef5ddfbc1a0eb from resource manager with leader id aee934bef10a71ac038ae4c1425d44c6.
+2025-11-20 15:31:31,407 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.flink.runtime.taskexecutor.slot.TaskSlotTableImpl [] - Allocated slot for 4d6c5ce9ea69a10d714ff66bd5e8f60a with resources ResourceProfile{cpuCores=1, taskHeapMemory=537.600mb (563714445 bytes), taskOffHeapMemory=0 bytes, managedMemory=634.880mb (665719939 bytes), networkMemory=158.720mb (166429984 bytes)}.
+2025-11-20 15:31:31,432 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.flink.runtime.taskexecutor.DefaultJobLeaderService [] - Add job ed8ee91cbabf45d7b18ef5ddfbc1a0eb for job leader monitoring.
+2025-11-20 15:31:31,434 [KubernetesClient-Informer-thread-1] INFO  org.apache.flink.kubernetes.kubeclient.resources.KubernetesConfigMapSharedInformer [] - Starting to watch for vvp-workload/job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-cluster-config-map, watching id:5f5afe61-97fd-4ddf-ab04-f4c90625b536
+2025-11-20 15:31:31,434 [flink-pekko.actor.default-dispatcher-6] INFO  org.apache.flink.runtime.leaderretrieval.DefaultLeaderRetrievalService [] - Starting DefaultLeaderRetrievalService with KubernetesLeaderRetrievalDriver{configMapName='job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-cluster-config-map'}.
+2025-11-20 15:31:31,435 [config-map-watch-handler-thread-1] INFO  org.apache.flink.runtime.taskexecutor.DefaultJobLeaderService [] - Try to register at job manager pekko.tcp://flink@21.225.43.175:6123/user/rpc/jobmanager_2 with leader id 038ae4c1-425d-44c6-aee9-34bef10a71ac.
+2025-11-20 15:31:31,462 [flink-pekko.actor.default-dispatcher-20] INFO  org.apache.flink.runtime.taskexecutor.DefaultJobLeaderService [] - Resolved JobManager address, beginning registration
+2025-11-20 15:31:31,500 [flink-pekko.actor.default-dispatcher-20] INFO  org.apache.flink.runtime.taskexecutor.DefaultJobLeaderService [] - Successful registration at job manager pekko.tcp://flink@21.225.43.175:6123/user/rpc/jobmanager_2 for job ed8ee91cbabf45d7b18ef5ddfbc1a0eb.
+2025-11-20 15:31:31,501 [flink-pekko.actor.default-dispatcher-20] INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Establish JobManager connection for job ed8ee91cbabf45d7b18ef5ddfbc1a0eb.
+2025-11-20 15:31:31,504 [flink-pekko.actor.default-dispatcher-20] INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Offer reserved slots to the leader of job ed8ee91cbabf45d7b18ef5ddfbc1a0eb.
+2025-11-20 15:31:31,547 [flink-pekko.actor.default-dispatcher-20] INFO  org.apache.flink.runtime.taskexecutor.slot.TaskSlotTableImpl [] - Activate slot 4d6c5ce9ea69a10d714ff66bd5e8f60a.
+2025-11-20 15:31:31,583 [flink-pekko.actor.default-dispatcher-20] INFO  org.apache.flink.runtime.state.changelog.StateChangelogStorageLoader [] - Creating a changelog storage with name 'memory'.
+2025-11-20 15:31:31,593 [flink-pekko.actor.default-dispatcher-20] INFO  org.apache.flink.runtime.state.TaskExecutorChannelStateExecutorFactoryManager [] - Creating the channel state executor factory for job id ed8ee91cbabf45d7b18ef5ddfbc1a0eb
+2025-11-20 15:31:31,628 [flink-pekko.actor.default-dispatcher-20] INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Received task Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0 (11e18b73176929c26493e4c1ae3fab2c_717c7b8afebbfb7137f6f0f99beb2a94_0_0), deploy into slot with allocation id 4d6c5ce9ea69a10d714ff66bd5e8f60a.
+2025-11-20 15:31:31,643 [flink-pekko.actor.default-dispatcher-20] INFO  org.apache.flink.runtime.taskexecutor.slot.TaskSlotTableImpl [] - Activate slot 4d6c5ce9ea69a10d714ff66bd5e8f60a.
+2025-11-20 15:31:31,644 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.taskmanager.Task                    [] - Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0 (11e18b73176929c26493e4c1ae3fab2c_717c7b8afebbfb7137f6f0f99beb2a94_0_0) switched from CREATED to DEPLOYING.
+2025-11-20 15:31:31,648 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.taskmanager.Task                    [] - Loading JAR files for task Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0 (11e18b73176929c26493e4c1ae3fab2c_717c7b8afebbfb7137f6f0f99beb2a94_0_0) [DEPLOYING].
+2025-11-20 15:31:31,649 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.execution.librarycache.BlobLibraryCacheManager [] - Create a new user code classloader for job ed8ee91cbabf45d7b18ef5ddfbc1a0eb, URLs [file:/flink/opt/artifacts/connectors/hologres/ververica-connector-common-1.20-vvr-11.3.0-jdk11-jar-with-dependencies.jar, file:/flink/opt/artifacts/connectors/kafka/ververica-connector-common-1.20-vvr-11.3.0-jdk11-jar-with-dependencies.jar, file:/flink/opt/artifacts/connectors/kafka/ververica-connector-kafka-1.20-vvr-11.3.0-jdk11-jar-with-dependencies.jar, file:/flink/opt/artifacts/connectors/hologres/ververica-connector-hologres-1.20-vvr-11.3.0-jdk11-jar-with-dependencies.jar].
+2025-11-20 15:31:31,739 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:31,739 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.streaming.runtime.tasks.StreamTask          [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:31,777 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:31,778 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - State backend loader loads the state backend as BundledGeminiStateBackend
+2025-11-20 15:31:31,783 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.streaming.runtime.tasks.StreamTask          [] - Using legacy state backend BundledGeminiStateBackend{checkpointStreamBackend=File State Backend (checkpoints: 'oss://flink-fullymanaged-cdeb8c54c5334a/flink-jobs/namespaces/duowei-default/deployments/979ea46a-a654-4674-b2d9-53aebc29288b/checkpoints/jobs/ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb', savepoints: 'oss://flink-fullymanaged-cdeb8c54c5334a/flink-savepoints/namespaces/duowei-default/deployments/979ea46a-a654-4674-b2d9-53aebc29288b, fileStateThreshold: 20480), realGeminiStateBackend=null as Job checkpoint storage
+2025-11-20 15:31:31,800 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.streaming.runtime.tasks.StreamTask          [] - Checkpoint storage passed via StreamExecutionEnvironment is ignored because legacy state backend 'com.alibaba.flink.statebackend.BundledGeminiStateBackend' is used. Legacy state backends can also be used as checkpoint storage and take precedence for backward-compatibility reasons.
+2025-11-20 15:31:31,816 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.taskmanager.Task                    [] - Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0 (11e18b73176929c26493e4c1ae3fab2c_717c7b8afebbfb7137f6f0f99beb2a94_0_0) switched from DEPLOYING to INITIALIZING.
+2025-11-20 15:31:32,388 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,389 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,389 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,389 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,389 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,390 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,390 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,390 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,390 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,390 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,390 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,391 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,439 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.ververica.connectors.hologres.sink.AbstractHologresOutputFormat [] - Opening HologresTableOutputFormat for frontend: hgprecn-cn-bkh4ijbpm001-cn-hangzhou-vpc-st.hologres.aliyuncs.com:80, database: v5project and table: stg_kafka_duowei_jst_order_rt
+2025-11-20 15:31:32,442 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.metrics.MetricGroup                         [] - Name collision: Group already contains a Metric with the name 'numBytesOut'. Metric will not be reported.[21.225.47.246, taskmanager, job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1, 439fdb47-b90e-4927-b6c9-71f90e54f041, Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188], 0]
+2025-11-20 15:31:32,443 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.metrics.MetricGroup                         [] - Name collision: Group already contains a Metric with the name 'numBytesOutPerSecond'. Metric will not be reported.[21.225.47.246, taskmanager, job-ed8ee91c-babf-45d7-b18e-f5ddfbc1a0eb-taskmanager-1-1, 439fdb47-b90e-4927-b6c9-71f90e54f041, Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188], 0]
+2025-11-20 15:31:32,450 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.HoloClient                       [] - =========holo-client version==========
+2025-11-20 15:31:32,451 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.HoloClient                       [] - version:2.6.10.1
+2025-11-20 15:31:32,452 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.HoloClient                       [] - revision:4838b6efc091ccb9cbf0784a87f0ed56fad44334
+2025-11-20 15:31:32,452 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.HoloClient                       [] - date:Thu Sep  4 09:58:17 CST 2025
+2025-11-20 15:31:32,452 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.HoloClient                       [] - ======================================
+2025-11-20 15:31:32,487 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.impl.ExecutionPool               [] - register client com.alibaba.hologres.client.HoloClient@88a0f1, client size 0->1
+2025-11-20 15:31:32,489 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.impl.ExecutionPool               [] - HoloClient ExecutionPool[embedded-holo-client] start
+2025-11-20 15:31:32,491 [embedded-holo-client-worker] INFO  com.alibaba.hologres.client.impl.Worker                      [] - worker:Worker-0 start
+2025-11-20 15:31:32,495 [embedded-holo-client-worker] INFO  com.alibaba.hologres.client.impl.ConnectionHolder            [] - Try to connect jdbc:hologres://hgprecn-cn-bkh4ijbpm001-cn-hangzhou-vpc-st.hologres.aliyuncs.com:80/v5project, owner:Worker-0
+2025-11-20 15:31:32,635 [embedded-holo-client-worker] INFO  com.alibaba.hologres.client.impl.ConnectionHolder            [] - execute preSql success:set hg_experimental_enable_fixed_dispatcher = on
+2025-11-20 15:31:32,640 [embedded-holo-client-worker] INFO  com.alibaba.hologres.client.impl.ConnectionHolder            [] - execute preSql success:set hg_experimental_enable_fixed_dispatcher_for_multi_values = on
+2025-11-20 15:31:32,647 [embedded-holo-client-worker] INFO  com.alibaba.hologres.client.impl.ConnectionHolder            [] - execute preSql success:set hg_experimental_enable_fixed_dispatcher_for_update = on
+2025-11-20 15:31:32,652 [embedded-holo-client-worker] INFO  com.alibaba.hologres.client.impl.ConnectionHolder            [] - execute preSql success:set hg_experimental_enable_fixed_dispatcher_for_delete = on
+2025-11-20 15:31:32,657 [embedded-holo-client-worker] INFO  com.alibaba.hologres.client.impl.ConnectionHolder            [] - execute preSql success:set hg_experimental_enable_fixed_dispatcher_for_scan = on
+2025-11-20 15:31:32,662 [embedded-holo-client-worker] INFO  com.alibaba.hologres.client.impl.ConnectionHolder            [] - execute preSql success:set hg_experimental_enable_fixed_dispatcher_affected_rows = off
+2025-11-20 15:31:32,688 [embedded-holo-client-worker] INFO  com.alibaba.hologres.client.impl.ConnectionHolder            [] - Build Connection{jdbcUrl=jdbc:hologres://hgprecn-cn-bkh4ijbpm001-cn-hangzhou-vpc-st.hologres.aliyuncs.com:80/v5project, version:r4.0.6, backendPid:46858002} succeed, owner:Worker-0, cost:193 ms
+2025-11-20 15:31:32,791 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.impl.ExecutionPool               [] - unregister client com.alibaba.hologres.client.HoloClient@88a0f1, client size 1->0
+2025-11-20 15:31:32,792 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.impl.ExecutionPool               [] - HoloClient ExecutionPool[embedded-holo-client] close
+2025-11-20 15:31:32,794 [embedded-holo-client-worker] INFO  com.alibaba.hologres.client.impl.Worker                      [] - worker:Worker-0 stop
+2025-11-20 15:31:32,794 [embedded-holo-client-worker] INFO  com.alibaba.hologres.client.impl.ConnectionHolder            [] - Close Connection{jdbcUrl=jdbc:hologres://hgprecn-cn-bkh4ijbpm001-cn-hangzhou-vpc-st.hologres.aliyuncs.com:80/v5project, backendPid:46858002}, owner:Worker-0
+2025-11-20 15:31:32,795 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.ververica.connectors.hologres.jdbc.HologresJDBCWriter [] - Initiating HologresJDBCWriter for database: v5project and table: stg_kafka_duowei_jst_order_rt, table orientation column, the whole configs is HologresConnectionParam{
+    JDBCOptions: JDBCOptions{database='v5project', table='stg_kafka_duowei_jst_order_rt', username='BASIC$flink_123', password='********', endpoint='hgprecn-cn-bkh4ijbpm001-cn-hangzhou-vpc-st.hologres.aliyuncs.com:80', connection.ssl.mode='DISABLE', connection.ssl.root-cert.location='null'},
+    HoloVersion: 4.0.6,
+    connection.pool.size: 3,
+    connection.pool.name: flink-stg_kafka_duowei_jst_order_rt,
+    connection.fixed.enabled: true,
+    connection.direct.enabled: false,
+    connection.max-idle-ms: 60000,
+    connection.max-alive-ms: 3600000,
+    meta-cache-ttl-ms: 600000,
+    statement-timeout-seconds: 28800,
+    serverless-computing.enabled: false,
+    serverless-computing.query-priority: 3,
+    retry-count: 10,
+    retry-sleep-step-ms: 5000,
+    table.local-time-zone: Asia/Shanghai,
+    execution.runtime-mode: STREAMING,
+    source.scan.fetch-size: 512,
+    source.scan.timeout-seconds: 600,
+    source.scan.filter-push-down.enabled: false,
+    source.binlog: true,
+    source.binlog.filter-push-down.enabled: true,
+    source.binlog.read-mode: JDBC,
+    source.binlog.change-log-mode: ALL,
+    source.binlog.batch-size: 512,
+    source.binlog.request-timeout-ms: 300000,
+    source.binlog.heartbeat-interval-ms: 500,
+    source.binlog.startup-mode: INITIAL,
+    source.binlog.start-time-ms: 0,
+    source.binlog.partition-binlog-mode: DISABLE,
+    source.binlog.partition-binlog-lateness-timeout-minutes: 60,
+    source.binlog.partition-values-to-read: [],
+    source.binlog.logical-partition-filter-column-names: [],
+    source.binlog.logical-partition-filter-column-values: [],
+    source.binlog.project-columns.enabled: true,
+    source.binlog.compression.enabled: true,
+    sink.write-mode: INSERT,
+    sink.on-conflict-action: INSERT_OR_REPLACE,
+    sink.partial-insert.enabled: false,
+    sink.delete-strategy: IGNORE_DELETE,
+    sink.create-missing-partition: true,
+    sink.deduplication.enabled: true,
+    sink.aggressive-flush.enabled: false,
+    sink.affect-rows.enabled: true,
+    sink.generate-binlog.disabled: false,
+    sink.ignore-null-when-update.enabled: false,
+    sink.remove-u0000-in-text.enabled: true,
+    sink.default-for-not-null-column.enabled: true,
+    sink.insert.batch-size: 256,
+    sink.insert.batch-byte-size: 2097152,
+    sink.insert.batch-total-byte-size: 20971520,
+    sink.insert.flush-interval-ms: 10000,
+    sink.insert.legacy-put-handler: false,
+    sink.insert.check-and-put.condition: null,
+    sink.copy.format: BINARY,
+    sink.copy.max-cell-buffer-size: 20971520,
+    sink.error-handler: EXCEPTION,
+    sink.reshuffle-by-holo-distribution-key.enabled: false,
+    lookup.read.batch-size: 256,
+    lookup.read.batch-queue-size: 512,
+    lookup.read.timeout-ms: 0,
+    lookup.read.column-table.enabled: false,
+    lookup.insert-if-not-exists: false,
+    lookup.async: true,
+    schema-evolution.type-normalization.enabled: false,
+    schema-evolution.auto-write-mode.enabled: false}
+2025-11-20 15:31:32,824 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.ververica.connectors.hologres.jdbc.HologresJDBCWriter [] - Successfully initiated connection to database [v5project] / table[stg_kafka_duowei_jst_order_rt]
+2025-11-20 15:31:32,825 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.ververica.connectors.hologres.sink.AbstractHologresOutputFormat [] - Finished opening HologresTableOutputFormat
+2025-11-20 15:31:32,825 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.ververica.connectors.common.sink.OutputFormatSinkFunction [] - Initialized OutputFormatSinkFunction of 0/1 task.
+2025-11-20 15:31:32,860 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,860 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,860 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,860 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,860 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,860 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,860 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,861 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,861 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,861 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,861 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,861 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,862 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,862 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,862 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,863 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,863 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,863 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,863 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,863 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,863 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,863 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.backend' instead of proper key 'state.backend.type'
+2025-11-20 15:31:32,863 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - Loading state backend via factory com.alibaba.flink.statebackend.GeminiStateBackendFactory
+2025-11-20 15:31:32,863 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.configuration.Configuration                 [] - Config uses deprecated configuration key 'state.savepoints.dir' instead of proper key 'execution.checkpointing.savepoint-dir'
+2025-11-20 15:31:32,886 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.runtime.taskmanager.Task                    [] - Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0 (11e18b73176929c26493e4c1ae3fab2c_717c7b8afebbfb7137f6f0f99beb2a94_0_0) switched from INITIALIZING to RUNNING.
+2025-11-20 15:31:32,912 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.connector.base.source.reader.SourceReaderBase [] - Adding split(s) to reader: [[Partition: duowei_jst_order-2, StartingOffset: 2955020, StoppingOffset: -9223372036854775808], [Partition: duowei_jst_order-5, StartingOffset: 2951192, StoppingOffset: -9223372036854775808], [Partition: duowei_jst_order-3, StartingOffset: 2955941, StoppingOffset: -9223372036854775808], [Partition: duowei_jst_order-4, StartingOffset: 2956580, StoppingOffset: -9223372036854775808], [Partition: duowei_jst_order-0, StartingOffset: 2952260, StoppingOffset: -9223372036854775808], [Partition: duowei_jst_order-1, StartingOffset: 2956929, StoppingOffset: -9223372036854775808]]
+2025-11-20 15:31:32,968 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.ConsumerConfig [] - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [alikafka-pre-cn-7pp2s1qpf009-1-vpc.alikafka.aliyuncs.com:9092, alikafka-pre-cn-7pp2s1qpf009-2-vpc.alikafka.aliyuncs.com:9092, alikafka-pre-cn-7pp2s1qpf009-3-vpc.alikafka.aliyuncs.com:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = flink_duowei_jst_order-0
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = flink_duowei_jst_order
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.flink.kafka.shaded.org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.flink.kafka.shaded.org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2025-11-20 15:31:33,094 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] WARN  org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.ConsumerConfig [] - These configurations '[check.duplicated.group.id, client.id.prefix, partition.discovery.interval.ms]' were supplied but are not used yet.
+2025-11-20 15:31:33,096 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.common.utils.AppInfoParser [] - Kafka version: 3.4.0
+2025-11-20 15:31:33,097 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.common.utils.AppInfoParser [] - Kafka commitId: 2e1947d240607d53
+2025-11-20 15:31:33,097 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.common.utils.AppInfoParser [] - Kafka startTimeMs: 1763623893094
+2025-11-20 15:31:33,137 [Source Data Fetcher for Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.connector.base.source.reader.fetcher.SplitFetcher [] - Starting split fetcher 0
+2025-11-20 15:31:33,153 [Source Data Fetcher for Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.KafkaConsumer [] - [Consumer clientId=flink_duowei_jst_order-0, groupId=flink_duowei_jst_order] Assigned to partition(s): duowei_jst_order-2, duowei_jst_order-5, duowei_jst_order-3, duowei_jst_order-4, duowei_jst_order-0, duowei_jst_order-1
+2025-11-20 15:31:33,158 [Source Data Fetcher for Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.KafkaConsumer [] - [Consumer clientId=flink_duowei_jst_order-0, groupId=flink_duowei_jst_order] Seeking to offset 2955020 for partition duowei_jst_order-2
+2025-11-20 15:31:33,160 [Source Data Fetcher for Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.KafkaConsumer [] - [Consumer clientId=flink_duowei_jst_order-0, groupId=flink_duowei_jst_order] Seeking to offset 2955941 for partition duowei_jst_order-3
+2025-11-20 15:31:33,160 [Source Data Fetcher for Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.KafkaConsumer [] - [Consumer clientId=flink_duowei_jst_order-0, groupId=flink_duowei_jst_order] Seeking to offset 2956580 for partition duowei_jst_order-4
+2025-11-20 15:31:33,161 [Source Data Fetcher for Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.KafkaConsumer [] - [Consumer clientId=flink_duowei_jst_order-0, groupId=flink_duowei_jst_order] Seeking to offset 2951192 for partition duowei_jst_order-5
+2025-11-20 15:31:33,161 [Source Data Fetcher for Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.KafkaConsumer [] - [Consumer clientId=flink_duowei_jst_order-0, groupId=flink_duowei_jst_order] Seeking to offset 2952260 for partition duowei_jst_order-0
+2025-11-20 15:31:33,161 [Source Data Fetcher for Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.KafkaConsumer [] - [Consumer clientId=flink_duowei_jst_order-0, groupId=flink_duowei_jst_order] Seeking to offset 2956929 for partition duowei_jst_order-1
+2025-11-20 15:31:33,567 [Source Data Fetcher for Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.clients.Metadata [] - [Consumer clientId=flink_duowei_jst_order-0, groupId=flink_duowei_jst_order] Cluster ID: WA1ThbktTXmxsL-bZrR7YQ
+2025-11-20 15:34:09,930 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.ververica.connectors.hologres.sink.AbstractHologresOutputFormat [] - start to wait request to finish
+2025-11-20 15:34:09,934 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.impl.ExecutionPool               [] - register client com.alibaba.hologres.client.HoloClient@18dc926, client size 0->1
+2025-11-20 15:34:09,935 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.impl.ExecutionPool               [] - HoloClient ExecutionPool[ExecutionPool--680722149flink-stg_kafka_duowei_jst_order_rttrue] start
+2025-11-20 15:34:09,936 [ExecutionPool--680722149flink-stg_kafka_duowei_jst_order_rttrue-worker] INFO  com.alibaba.hologres.client.impl.Worker                      [] - worker:Worker-0 start
+2025-11-20 15:34:09,937 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.impl.ExecutionPool               [] - register client com.alibaba.hologres.client.HoloClient@18dc926, client size 0->1
+2025-11-20 15:34:09,937 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.hologres.client.impl.ExecutionPool               [] - HoloClient ExecutionPool[embedded-fixed-ververica-connector-hologres] start
+2025-11-20 15:34:09,938 [embedded-fixed-ververica-connector-hologres-worker] INFO  com.alibaba.hologres.client.impl.Worker                      [] - worker:Fixed-Worker-0 start
+2025-11-20 15:34:09,939 [embedded-fixed-ververica-connector-hologres-worker] INFO  com.alibaba.hologres.client.impl.Worker                      [] - worker:Fixed-Worker-1 start
+2025-11-20 15:34:09,940 [embedded-fixed-ververica-connector-hologres-worker] INFO  com.alibaba.hologres.client.impl.Worker                      [] - worker:Fixed-Worker-2 start
+2025-11-20 15:34:09,943 [Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  com.alibaba.ververica.connectors.hologres.sink.AbstractHologresOutputFormat [] - end to wait request to finish
+2025-11-20 15:34:13,520 [Source Data Fetcher for Source: kafka_source_duowei_jst_order[1186] -> Calc[1187] -> Sink: hologres_sink_stg_kafka_duowei_jst_order_rt[1188] (1/1)#0] INFO  org.apache.flink.kafka.shaded.org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [] - [Consumer clientId=flink_duowei_jst_order-0, groupId=flink_duowei_jst_order] Discovered group coordinator 172.16.201.174:9092 (id: 2147483544 rack: null)
