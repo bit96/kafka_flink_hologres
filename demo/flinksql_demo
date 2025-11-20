@@ -1,0 +1,108 @@
+--********************************************************************--
+-- Author:         boyan
+-- Created Time:   2025-11-10 15:47:31
+-- Description:    Write your description here
+-- Hints:          You can use SET statements to modify the configuration
+--********************************************************************--
+
+
+CREATE TEMPORARY TABLE source_kafka_order
+(
+    key_col              STRING COMMENT '订单no'
+    ,`partition`         INT NOT NULL METADATA
+    ,`offset`            BIGINT NOT NULL METADATA
+    ,`value_origin_data` STRING COMMENT '具体数据json格式'
+    ,`value_created`     STRING
+    ,`value_modified`    STRING
+    ,`value_order_date`  STRING
+    ,`value_paid_amount` STRING
+    ,`value_pay_amount`  STRING
+    ,`value_pay_date`    STRING
+    ,`value_shop_id`     STRING
+    ,`value_shop_name`   STRING
+    ,`value_so_id`       STRING
+    ,`value_status`      STRING
+    ,`value_platform_name` STRING
+    ,PRIMARY KEY (`partition`, `offset`) NOT ENFORCED
+)
+WITH (
+    'connector' = 'kafka'
+    ,'key.fields' = 'key_col'
+    ,'key.fields-prefix' = 'key_'
+    ,'key.format' = 'raw'
+    ,'properties.bootstrap.servers' = 'alikafka-pre-cn-7pp2s1qpf009-1-vpc.alikafka.aliyuncs.com:9092,alikafka-pre-cn-7pp2s1qpf009-2-vpc.alikafka.aliyuncs.com:9092,alikafka-pre-cn-7pp2s1qpf009-3-vpc.alikafka.aliyuncs.com:9092'
+    ,'topic' = 'duowei_jst_order'
+    ,'value.fields-include' = 'EXCEPT_KEY'
+    ,'value.format' = 'json'
+    ,'value.fields-prefix' = 'value_'
+    ,'properties.group.id' = 'duowei_jst_order_ods'
+    ,'scan.startup.mode' = 'earliest-offset'
+	-- 'scan.startup.mode' = 'timestamp',
+	-- 'scan.startup.timestamp-millis' = '1686136876967'
+)
+;
+
+
+-- 订单中间数据-订单金额&订单基础信息
+
+CREATE TEMPORARY TABLE sink_holo_ods
+(
+    etl_time         timestamp
+    ,key_col         VARCHAR(2147483647)
+    ,`key_partition` int
+    ,`key_offset`    bigint
+    ,`origin_data`   VARCHAR(2147483647) COMMENT '具体数据json格式'
+    ,`created`       timestamp
+    ,`modified`      timestamp
+    ,`order_date`    timestamp
+    ,`paid_amount`   decimal(20, 2)
+    ,`pay_amount`    decimal(20, 2)
+    ,`pay_date`      timestamp
+    ,`shop_id`       bigint
+    ,`shop_name`     VARCHAR(2147483647)
+    ,`so_id`         VARCHAR(2147483647)
+    ,`status`        VARCHAR(2147483647)
+    ,`platform_name` VARCHAR(2147483647)
+)
+with (
+    'connector' = 'hologres'
+    ,'dbname' = 'jushuitan'
+    ,'endpoint' = 'hgprecn-cn-bkh4ijbpm001-cn-hangzhou-vpc-st.hologres.aliyuncs.com:80'
+    ,'username' = 'BASIC$flink_123'
+    ,'password' = 'flink_123'
+    ,'tablename' = 'public.stg_kafka_duowei_jushuitan_order_rt'
+    ,'ignoredelete' = 'false'
+    ,'mutatetype' = 'insertOrReplace'
+    ,'ignoredelete' = 'true'
+    ,-- 忽略回撤消息产生的Delete请求
+     'sdkMode' = 'jdbc'
+    ,'connectionSize' = '3'
+    ,'jdbcWriteBatchSize' = '256'
+    ,'jdbcWriteBatchByteSize' = '2097152'
+    ,-- 2MB
+  'jdbcWriteFlushInterval' = '10000'
+    ,'connectionPoolName' = 'flink-stg_kafka_duowei_jushuitan_order_rt'
+)
+;
+
+insert into sink_holo_ods
+/* +OPTIONS('mutatetype'='insertoringore')*/
+select
+    cast(now() as timestamp) as etl_time
+    ,key_col
+    ,`partition`   as key_partition
+    ,`offset`      as key_offset
+    ,`value_origin_data` as origin_data
+    ,cast(`value_created` as timestamp) as created
+    ,cast(`value_modified` as timestamp) as modified
+    ,cast(`value_order_date` as timestamp) as order_date
+    ,cast(`value_paid_amount` as decimal(20,2)) as paid_amount
+    ,cast(`value_pay_amount` as decimal(20,2)) as pay_amount
+    ,cast(`value_pay_date` as timestamp) as pay_date
+    ,cast(`value_shop_id` as bigint) as shop_id
+    ,`value_shop_name` as shop_name
+    ,`value_so_id` as so_id
+    ,`value_status` as status
+    ,`value_platform_name` as platform_name
+from source_kafka_order
+where value_platform_name is not null and value_platform_name<>'';

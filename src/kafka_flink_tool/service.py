@@ -18,7 +18,7 @@ class GeneratorService:
         self.hologres_config = self.config_manager.get_hologres_config()
         self.dao = HologresDAO(self.hologres_config)
 
-    def generate(self, topic_name: str, sink_table: Optional[str] = None) -> int:
+    def generate(self, topic_name: str, sink_table: Optional[str] = None, demo_file: Optional[str] = None) -> int:
         # 1. 获取 Topic 配置
         logger.info(f"查询 Topic 配置: {topic_name}")
         topic_config = self.dao.get_topic_config_by_name(topic_name)
@@ -26,11 +26,16 @@ class GeneratorService:
             raise ValueError(f"Topic 配置不存在: {topic_name}")
 
         # 2. 采样数据
-        logger.info(f"连接 Kafka: {topic_config.kafka_brokers}")
-        kafka_client = KafkaClient(topic_config.kafka_brokers, topic_name)
-        logger.info(f"采样 Topic: {topic_name} (10 条)")
-        messages = kafka_client.sample_messages(count=10)
-        logger.info(f"采样完成，共 {len(messages)} 条数据")
+        if demo_file:
+            logger.info(f"从文件加载数据: {demo_file}")
+            messages = KafkaClient.load_from_file(demo_file, count=10)
+            logger.info(f"加载完成，共 {len(messages)} 条数据")
+        else:
+            logger.info(f"连接 Kafka: {topic_config.kafka_brokers}")
+            kafka_client = KafkaClient(topic_config.kafka_brokers, topic_name)
+            logger.info(f"采样 Topic: {topic_name} (10 条)")
+            messages = kafka_client.sample_messages(count=10)
+            logger.info(f"采样完成，共 {len(messages)} 条数据")
 
         # 3. 推断类型
         logger.info("推断数据类型...")

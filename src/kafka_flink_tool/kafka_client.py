@@ -1,6 +1,7 @@
 import json
 import logging
 from typing import List, Dict, Any, Optional
+from pathlib import Path
 from kafka import KafkaConsumer
 
 logger = logging.getLogger(__name__)
@@ -54,5 +55,34 @@ class KafkaClient:
 
         if len(messages) < count:
             raise ValueError(f"采样数据不足，期望 {count} 条，实际 {len(messages)} 条")
+
+        return messages
+
+    @staticmethod
+    def load_from_file(file_path: str, count: int = 10) -> List[Dict[str, Any]]:
+        """从文件加载 demo 数据"""
+        path = Path(file_path)
+        if not path.exists():
+            raise FileNotFoundError(f"文件不存在: {file_path}")
+
+        messages = []
+        with open(path, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                if line.startswith('key:'):
+                    value_start = line.find('value:')
+                    if value_start != -1:
+                        json_str = line[value_start + 6:]
+                        try:
+                            messages.append(json.loads(json_str))
+                            if len(messages) >= count:
+                                break
+                        except json.JSONDecodeError as e:
+                            logger.warning(f"JSON 解析失败: {e}")
+
+        if not messages:
+            raise ValueError(f"文件中没有有效数据: {file_path}")
 
         return messages

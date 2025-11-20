@@ -50,7 +50,7 @@ class TypeInferencer:
         if 'bool' in types and len(types) == 1:
             return 'BOOLEAN'
         elif 'float' in types:
-            return 'DOUBLE'
+            return 'DOUBLE PRECISION'
         elif 'int' in types and 'float' not in types:
             # 如果同时有 bool 和 int，说明有非布尔的整数
             if 'bool' in types:

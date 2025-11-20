@@ -18,8 +18,10 @@ COMMENT ON COLUMN kafka_topic_config.topic_name IS 'Kafka Topic 名称';
 COMMENT ON COLUMN kafka_topic_config.kafka_brokers IS 'Kafka Broker 地址列表，格式：host1:port1,host2:port2';
 
 -- 创建 Flink SQL 记录表
+CREATE SEQUENCE IF NOT EXISTS flink_sql_record_id_seq;
+
 CREATE TABLE IF NOT EXISTS flink_sql_record (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL DEFAULT nextval('flink_sql_record_id_seq') PRIMARY KEY,
     topic_id BIGINT NOT NULL,
     topic_name TEXT NOT NULL,
     sink_table_name TEXT NOT NULL,
