@@ -33,9 +33,13 @@ class GeneratorService:
         else:
             logger.info(f"连接 Kafka: {topic_config.kafka_brokers}")
             kafka_client = KafkaClient(topic_config.kafka_brokers, topic_name)
-            logger.info(f"采样 Topic: {topic_name} (10 条)")
+            logger.info(f"采样 Topic: {topic_name} (最多 10 条)")
             messages = kafka_client.sample_messages(count=10)
             logger.info(f"采样完成，共 {len(messages)} 条数据")
+
+        # 检查是否有数据（至少 1 条）
+        if not messages:
+            raise ValueError("没有获取到任何数据，无法进行类型推断")
 
         # 3. 推断类型
         logger.info("推断数据类型...")

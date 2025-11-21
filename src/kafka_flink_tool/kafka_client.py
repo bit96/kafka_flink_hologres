@@ -54,7 +54,7 @@ class KafkaClient:
             consumer.close()
 
         if len(messages) < count:
-            raise ValueError(f"采样数据不足，期望 {count} 条，实际 {len(messages)} 条")
+            logger.warning(f"采样数据不足，期望 {count} 条，实际 {len(messages)} 条，将使用现有数据进行推断")
 
         return messages
 
@@ -85,4 +85,6 @@ class KafkaClient:
         if not messages:
             raise ValueError(f"文件中没有有效数据: {file_path}")
 
+        # 如果实际加载的数据少于期望数量，记录警告但不阻断
+        # （这个检查在调用 load_from_file 的地方处理）
         return messages
