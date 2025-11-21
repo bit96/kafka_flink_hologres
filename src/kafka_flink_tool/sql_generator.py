@@ -29,7 +29,9 @@ class FlinkSQLGenerator:
         return source_ddl, sink_ddl, insert_sql, full_sql
 
     def _generate_source_ddl(self, topic_name: str, schema: InferredSchema, brokers: str) -> str:
-        source_table = f"kafka_source_{topic_name}"
+        # 将 topic 名称中的连字符和点替换为下划线，生成合法的表名
+        safe_topic_name = topic_name.replace('-', '_').replace('.', '_')
+        source_table = f"kafka_source_{safe_topic_name}"
 
         fields = ["    `key_col` STRING"]
         for field in schema.fields:
@@ -84,7 +86,9 @@ class FlinkSQLGenerator:
 );"""
 
     def _generate_insert_sql(self, topic_name: str, sink_table: str, schema: InferredSchema) -> str:
-        source_table = f"kafka_source_{topic_name}"
+        # 将 topic 名称中的连字符和点替换为下划线，生成合法的表名
+        safe_topic_name = topic_name.replace('-', '_').replace('.', '_')
+        source_table = f"kafka_source_{safe_topic_name}"
         sink_table_name = f"hologres_sink_{sink_table}"
 
         select_fields = ["cast(now() as timestamp) as etl_time", "`key_col`"]
@@ -95,15 +99,15 @@ class FlinkSQLGenerator:
 
             # 根据 Hologres 类型生成对应的 CAST 语句
             if field.type == 'TIMESTAMPTZ':
-                select_fields.append(f"cast({source_field} as timestamp) as {target_field}")
+                select_fields.append(f"cast({source_field} as timestamp) as `{target_field}`")
             elif field.type == 'DOUBLE PRECISION':
-                select_fields.append(f"cast({source_field} as decimal(20,2)) as {target_field}")
+                select_fields.append(f"cast({source_field} as decimal(20,2)) as `{target_field}`")
             elif field.type == 'BIGINT':
                 # 如果原始数据是字符串，需要转换
-                select_fields.append(f"cast({source_field} as bigint) as {target_field}")
+                select_fields.append(f"cast({source_field} as bigint) as `{target_field}`")
             else:
                 # TEXT, BOOLEAN 等直接映射
-                select_fields.append(f"{source_field} as {target_field}")
+                select_fields.append(f"{source_field} as `{target_field}`")
 
         fields_str = "\n    ,".join(select_fields)
 

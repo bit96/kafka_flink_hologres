@@ -49,7 +49,9 @@ class GeneratorService:
 
         # 4. 确定 sink 表名
         if not sink_table:
-            sink_table = f"stg_kafka_{topic_name}_rt"
+            # 将 topic 名称中的连字符和点替换为下划线，生成合法表名
+            safe_topic_name = topic_name.replace('-', '_').replace('.', '_')
+            sink_table = f"stg_kafka_{safe_topic_name}_rt"
 
         # 5. 生成 DDL
         logger.info("生成 DDL...")
