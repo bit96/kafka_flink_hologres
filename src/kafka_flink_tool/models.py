@@ -34,3 +34,20 @@ class FlinkSQLRecord(BaseModel):
     inferred_schema: Optional[dict] = None
     sample_count: int = 10
     status: str = "generated"
+
+
+class AliyunFlinkJob(BaseModel):
+    """阿里云 Flink 作业记录模型"""
+    id: Optional[int] = None
+    sql_record_id: int
+    deployment_id: str
+    job_id: Optional[str] = None
+    status: str = "CREATED"
+    workspace_id: Optional[str] = None
+    namespace: Optional[str] = None
+    create_time: Optional[str] = None
+    update_time: Optional[str] = None
+    start_time: Optional[str] = None
+    end_time: Optional[str] = None
+    error_message: Optional[str] = None
+    flink_config: Optional[dict] = None

@@ -2,7 +2,7 @@ import psycopg2
 import json
 from typing import Optional
 from .config import HologresConfig
-from .models import KafkaTopicConfig, FlinkSQLRecord
+from .models import KafkaTopicConfig, FlinkSQLRecord, AliyunFlinkJob
 
 
 class HologresDAO:
@@ -97,6 +97,89 @@ class HologresDAO:
             record_id = cur.fetchone()[0]
         conn.commit()
         return record_id
+
+    def create_aliyun_flink_job(self, job: AliyunFlinkJob) -> int:
+        """创建阿里云 Flink 作业记录"""
+        conn = self._get_connection()
+        with conn.cursor() as cur:
+            # 将 dict 转为 JSON 字符串
+            flink_config_json = json.dumps(job.flink_config) if job.flink_config else None
+
+            cur.execute(
+                """
+                INSERT INTO aliyun_flink_jobs (
+                    sql_record_id, deployment_id, job_id, status,
+                    workspace_id, namespace, create_time, update_time,
+                    start_time, end_time, error_message, flink_config
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s::jsonb)
+                RETURNING id
+                """,
+                (
+                    job.sql_record_id, job.deployment_id, job.job_id, job.status,
+                    job.workspace_id, job.namespace, job.create_time, job.update_time,
+                    job.start_time, job.end_time, job.error_message, flink_config_json
+                )
+            )
+            job_id = cur.fetchone()[0]
+        conn.commit()
+        return job_id
+
+    def get_aliyun_flink_job(self, job_id: int) -> Optional[AliyunFlinkJob]:
+        """根据 ID 获取阿里云 Flink 作业记录"""
+        conn = self._get_connection()
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT id, sql_record_id, deployment_id, job_id, status,
+                       workspace_id, namespace, create_time, update_time,
+                       start_time, end_time, error_message, flink_config
+                FROM aliyun_flink_jobs WHERE id = %s
+                """,
+                (job_id,)
+            )
+            row = cur.fetchone()
+            if row:
+                return AliyunFlinkJob(
+                    id=row[0],
+                    sql_record_id=row[1],
+                    deployment_id=row[2],
+                    job_id=row[3],
+                    status=row[4],
+                    workspace_id=row[5],
+                    namespace=row[6],
+                    create_time=row[7],
+                    update_time=row[8],
+                    start_time=row[9],
+                    end_time=row[10],
+                    error_message=row[11],
+                    flink_config=row[12]
+                )
+        return None
+
+    def update_aliyun_flink_job_status(self, job_id: int, status: str,
+                                       error_message: Optional[str] = None) -> None:
+        """更新阿里云 Flink 作业状态"""
+        conn = self._get_connection()
+        with conn.cursor() as cur:
+            if error_message:
+                cur.execute(
+                    """
+                    UPDATE aliyun_flink_jobs
+                    SET status = %s, error_message = %s, update_time = CURRENT_TIMESTAMP
+                    WHERE id = %s
+                    """,
+                    (status, error_message, job_id)
+                )
+            else:
+                cur.execute(
+                    """
+                    UPDATE aliyun_flink_jobs
+                    SET status = %s, update_time = CURRENT_TIMESTAMP
+                    WHERE id = %s
+                    """,
+                    (status, job_id)
+                )
+        conn.commit()
 
     def close(self):
         if self._conn and not self._conn.closed:

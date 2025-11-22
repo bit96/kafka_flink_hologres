@@ -1,6 +1,6 @@
 import click
 import json
-from .service import GeneratorService
+from .service import GeneratorService, AliyunFlinkService
 from .config import ConfigManager
 from .database import HologresDAO
 from .kafka_client import KafkaClient
@@ -28,6 +28,66 @@ def generate(topic_name: str, sink_table: str, demo_file: str, config: str):
         click.echo(f"[SUCCESS] 生成成功！Record ID: {record_id}")
     except Exception as e:
         logger.error(f"生成失败: {e}")
+        click.echo(f"[ERROR] {e}", err=True)
+        raise click.Abort()
+
+
+@cli.command()
+@click.option('--topic-name', required=True, help='Kafka Topic 名称')
+@click.option('--sink-table', default=None, help='Hologres Sink 表名')
+@click.option('--demo-file', default=None, help='Demo 数据文件路径')
+@click.option('--config', default='config.yaml', help='配置文件路径')
+def deploy(topic_name: str, sink_table: str, demo_file: str, config: str):
+    """生成 SQL 并部署到阿里云 Flink"""
+    try:
+        service = AliyunFlinkService(config)
+        result = service.generate_and_deploy(topic_name, sink_table, demo_file)
+
+        click.echo("[SUCCESS] 部署成功！")
+        click.echo(f"Deployment ID: {result['deployment_id']}")
+        click.echo(f"Job ID: {result['job_id']}")
+        click.echo(f"状态: {result['status']}")
+        click.echo(f"阿里云作业记录 ID: {result['aliyun_job_id']}")
+
+    except Exception as e:
+        logger.error(f"部署失败: {e}")
+        click.echo(f"[ERROR] {e}", err=True)
+        raise click.Abort()
+
+
+@cli.command()
+@click.option('--deployment-id', required=True, help='部署ID')
+@click.option('--config', default='config.yaml', help='配置文件路径')
+def start(deployment_id: str, config: str):
+    """启动已部署的作业"""
+    try:
+        service = AliyunFlinkService(config)
+        result = service.start_job(deployment_id)
+
+        click.echo("[SUCCESS] 作业启动成功！")
+        click.echo(f"Job ID: {result['job_id']}")
+        click.echo(f"状态: {result['status']}")
+
+    except Exception as e:
+        logger.error(f"启动失败: {e}")
+        click.echo(f"[ERROR] {e}", err=True)
+        raise click.Abort()
+
+
+@cli.command()
+@click.option('--job-id', required=True, help='作业实例ID')
+@click.option('--config', default='config.yaml', help='配置文件路径')
+def status(job_id: str, config: str):
+    """查询作业状态"""
+    try:
+        service = AliyunFlinkService(config)
+        result = service.get_job_status(job_id)
+
+        click.echo(f"作业 ID: {result['job_id']}")
+        click.echo(f"当前状态: {result['status']}")
+
+    except Exception as e:
+        logger.error(f"查询失败: {e}")
         click.echo(f"[ERROR] {e}", err=True)
         raise click.Abort()
 
