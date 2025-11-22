@@ -22,15 +22,15 @@
 ```
 Step 1: CreateDeploymentDraft (创建作业草稿)
   ↓
-Step 2: 等待草稿创建完成
+Step 2: GetDeployDeploymentDraftResult (获取作业草稿创建结果)
   ↓
 Step 3: DeployDeploymentDraftAsync (部署作业草稿)
   ↓
-Step 4: 轮询检查部署状态 (GetDeployment)
+Step 4: GetDeployment (获取已部署作业状态)
   ↓
 Step 5: StartJobWithParams (启动作业实例)
   ↓
-Step 6: 轮询检查作业状态 (GetJob)
+Step 6: GetJob (获取作业运行状态)
   ↓
 Step 7: 返回最终状态
 ```
@@ -43,10 +43,11 @@ Step 7: 返回最终状态
 3. **StartJobWithParams** - 启动作业实例
 
 #### 需要补充的 API
-1. **GetDeployment** - 查询 Deployment 状态
-2. **GetJob** - 查询 Job 状态
-3. **StopJob** - 停止作业（用于管理）
-4. **DeleteDeployment** - 删除 Deployment（用于清理）
+1. **GetDeployDeploymentDraftResult** - 获取作业草稿创建结果（验证草稿创建状态）
+2. **GetDeployment** - 查询 Deployment 状态
+3. **GetJob** - 查询 Job 状态
+4. **StopJob** - 停止作业（用于管理）
+5. **DeleteDeployment** - 删除 Deployment（用于清理）
 
 ## 三、模块架构设计
 
@@ -54,7 +55,7 @@ Step 7: 返回最终状态
 
 #### 模块 1: 阿里云 Flink API 客户端
 - **文件路径**: `src/kafka_flink_tool/flink_client.py`
-- **代码量**: ~300 行
+- **代码量**: ~450 行
 - **核心类**: `AliyunFlinkClient`
 - **主要功能**:
   - 创建作业草稿
@@ -123,7 +124,7 @@ Step 7: 返回最终状态
 
 #### 模块 7: MCP 集成
 - **目录路径**: `src/kafka_flink_tool/mcp/`
-- **代码量**: ~300 行
+- **代码量**: ~400 行
 - **暴露工具**:
   1. `generate_and_deploy_flink_job` - 端到端生成并部署
   2. `generate_flink_sql` - 仅生成 SQL
@@ -143,8 +144,29 @@ Step 7: 返回最终状态
 - 确保 AK/SK 安全性（使用环境变量）
 
 ### 4.2 异步轮询机制
-部署和启动都是异步操作，需要实现轮询：
+草稿创建和部署、启动都是异步操作，需要实现轮询：
+
+#### 检查草稿创建状态
 ```python
+import time
+
+def wait_for_deployment_draft(self, draft_id: str, timeout: int = 60) -> bool:
+    """等待草稿创建完成"""
+    start_time = time.time()
+    while time.time() - start_time < timeout:
+        result = self.get_deployment_draft_result(draft_id)
+        if result.status == "SUCCESS":
+            return True
+        elif result.status == "FAILED":
+            raise RuntimeError("草稿创建失败")
+        time.sleep(2)
+    return False
+```
+
+#### 检查部署状态
+```python
+import time
+
 def wait_for_deployment(self, deployment_id: str, timeout: int = 300) -> bool:
     start_time = time.time()
     while time.time() - start_time < timeout:
@@ -153,6 +175,22 @@ def wait_for_deployment(self, deployment_id: str, timeout: int = 300) -> bool:
             return True
         elif status == "FAILED":
             raise RuntimeError("部署失败")
+        time.sleep(5)
+    return False
+```
+
+#### 检查作业启动状态
+```python
+import time
+
+def wait_for_job(self, job_id: str, timeout: int = 300) -> bool:
+    start_time = time.time()
+    while time.time() - start_time < timeout:
+        status = self.get_job_status(job_id)
+        if status == "RUNNING":
+            return True
+        elif status == "FAILED":
+            raise RuntimeError("作业启动失败")
         time.sleep(5)
     return False
 ```
@@ -217,7 +255,7 @@ dependencies = [
 ### 阶段 1: 阿里云 Flink API 客户端（1 天）
 - [ ] 实现 flink_client.py
 - [ ] 实现 API 签名
-- [ ] 实现 5 个核心 API 调用
+- [ ] 实现 6 个核心 API 调用
 - [ ] 实现异步轮询机制
 - [ ] 单元测试
 
@@ -268,11 +306,14 @@ dependencies = [
 
 ### 7.3 权限管理
 确保 AK/SK 有足够权限：
-- CreateDeployment
+- CreateDeploymentDraft
+- GetDeployDeploymentDraftResult
 - DeployDeployment
 - StartJob
 - GetDeployment
 - GetJob
+- StopJob
+- DeleteDeployment
 
 ### 7.4 安全性
 - AK/SK 不能硬编码
@@ -325,4 +366,4 @@ dependencies = [
 
 **文档维护人**: 开发团队
 **下次评审时间**: 待定
-**文档版本**: v1.0
+**文档版本**: v1.2
